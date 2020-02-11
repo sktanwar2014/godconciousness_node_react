@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 15/11/2018 11:43
+  	Creation date: 28/05/2018 11:11
   	*/
 
 @font-face {
@@ -24,8 +24,7 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-  speak: none;
-  font-style: normal;
+        font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
@@ -36,10 +35,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-.flaticon-chat-1:before { content: "\f100"; }
-.flaticon-chat:before { content: "\f101"; }
-.flaticon-speaker:before { content: "\f102"; }
-.flaticon-musical-note:before { content: "\f103"; }
-.flaticon-avatar:before { content: "\f104"; }
-.flaticon-paper-plane:before { content: "\f105"; }
+.flaticon-book:before { content: "\f100"; }
+.flaticon-books:before { content: "\f101"; }
+.flaticon-professor:before { content: "\f102"; }
+.flaticon-student:before { content: "\f103"; }
+.flaticon-diploma:before { content: "\f104"; }
+.flaticon-open-book:before { content: "\f105"; }
+.flaticon-university:before { content: "\f106"; }
+.flaticon-mortarboard:before { content: "\f107"; }
