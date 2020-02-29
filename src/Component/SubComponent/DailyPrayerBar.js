@@ -1,5 +1,5 @@
 import React, { Component,Fragment } from 'react';
-import logoImage from '../../image/pic.png';
+
 
 
 export default class DailyPrayerBar extends Component {

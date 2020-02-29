@@ -1,5 +1,5 @@
 import React, { Component,Fragment } from 'react';
-import logoImage from '../../image/pic.png';
+// import logoImage from '../../../public/images/pic.png';
 
 
 export default class Header extends Component {
@@ -22,7 +22,7 @@ export default class Header extends Component {
                 <header role="banner">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container">
-                    <a className="navbar-brand absolute" href="/" > <img src={logoImage} width="50" height="50"></img></a>
+                    <a className="navbar-brand absolute" href="/" > <img src='images/pic.png' width="50" height="50"></img></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
