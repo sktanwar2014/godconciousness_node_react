@@ -40,7 +40,7 @@ export default function Miracles (){
           </div>
         </div>      
       </div>
-      <div className="block-13">
+      <div className="block-13" style={{marginLeft:'90px'}}>
         <div className="nonloop-block-13 owl-carousel owl-loaded owl-drag">
           <div className="owl-stage-outer">
             <div className="owl-stage" style={{transform: 'translate3d(0px, 0px, 0px)', transition: 'all 0.25s ease 0s', width: '2540px', paddingLeft: '150px', paddingRight: '150px'}}>

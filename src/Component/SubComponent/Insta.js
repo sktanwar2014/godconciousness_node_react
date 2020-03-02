@@ -23,12 +23,12 @@ export default class Insta extends Component {
               <div class="block-44-text">
               <a href="#">Rebuilding The Walls</a>
                 <div class="block-44-meta mb-2">Posted on June 28, 2018, Pastor Gregg Smith</div>
-                <div class="block-44-icons">
+                {/* <div class="block-44-icons">
                   <a href="#" class=""><span class="fa fa-video-camera"></span></a>
                   <a href="#" class=""><span class="fa fa-headphones"></span></a>
                   <a href="#" class=""><span class="fa fa-cloud-download"></span></a>
                   <a href="#" class=""><span class="fa fa-book"></span></a>
-                </div>
+                </div> */}
               </div>
             </div>
             </div>
@@ -38,12 +38,12 @@ export default class Insta extends Component {
               <div class="block-44-text">
                 <a href="#">Rebuilding The Walls</a>
                 <div class="block-44-meta mb-2">Posted on June 28, 2018, Pastor Gregg Smith</div>
-                <div class="block-44-icons">
+                {/* <div class="block-44-icons">
                   <a href="#" class=""><span class="fa fa-video-camera"></span></a>
                   <a href="#" class=""><span class="fa fa-headphones"></span></a>
                   <a href="#" class=""><span class="fa fa-cloud-download"></span></a>
                   <a href="#" class=""><span class="fa fa-book"></span></a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -53,12 +53,12 @@ export default class Insta extends Component {
               <div class="block-44-text">
               <a href="#">Rebuilding The Walls</a>
                 <div class="block-44-meta mb-2">Posted on June 28, 2018, Pastor Gregg Smith</div>
-                <div class="block-44-icons">
+                {/* <div class="block-44-icons">
                   <a href="#" class=""><span class="fa fa-video-camera"></span></a>
                   <a href="#" class=""><span class="fa fa-headphones"></span></a>
                   <a href="#" class=""><span class="fa fa-cloud-download"></span></a>
                   <a href="#" class=""><span class="fa fa-book"></span></a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -68,12 +68,12 @@ export default class Insta extends Component {
               <div class="block-44-text">
               <a href="#">Rebuilding The Walls</a>
                 <div class="block-44-meta mb-2">Posted on June 28, 2018, Pastor Gregg Smith</div>
-                <div class="block-44-icons">
+                {/* <div class="block-44-icons">
                   <a href="#" class=""><span class="fa fa-video-camera"></span></a>
                   <a href="#" class=""><span class="fa fa-headphones"></span></a>
                   <a href="#" class=""><span class="fa fa-cloud-download"></span></a>
                   <a href="#" class=""><span class="fa fa-book"></span></a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

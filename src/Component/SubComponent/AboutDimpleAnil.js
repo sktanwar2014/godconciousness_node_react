@@ -14,10 +14,11 @@ export default class AboutDimpleAnil extends Component {
     //       <div class="col-12">
            
         <div class="col-md-8 pl-md-5">
-              
+              <div class="container">
+                  <div class="row">
             <p class=" text-justify" style={{color: 'black',fontsize: '18px' ,margin: '0px',margintop: '-8px'}}>
 
-            <img src="http://godsconsciousness.com/images/auntyportrait.jpg" alt="" class="img-fluid img-shadow float-left mr-3" style={{maxwidth: '100%',width: '500px',height:' 550px'}}/>
+            {/* <img src="http://godsconsciousness.com/images/auntyportrait.jpg" alt="" class="img-fluid img-shadow float-left mr-3" style={{maxwidth: '100%',width: '500px',height:' 550px'}}/> */}
 
             Dimple Anil is a
               Jammu
@@ -41,11 +42,14 @@ export default class AboutDimpleAnil extends Component {
               Radio and TV plays as an anchor, actor and director.
 
             </p>
-
+            <img src="http://godsconsciousness.com/images/auntyportrait.jpg" alt="" class="img-fluid img-shadow float-left mr-3" style={{maxwidth: '100%',width: '500px',height:' 550px'}}/> 
+            </div>
+           </div> 
           {/* </div>
 
         </div>
       </div> */}
+  
            <div class="container">
                   <div class="row">
                    <div class="col-lg-12  col-md-12">

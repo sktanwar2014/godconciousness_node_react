@@ -15,11 +15,14 @@ export default class DailyPrayerBar extends Component {
                         <div class="row">
                         <div class="col-md-12 d-lg-flex">              
                             <div class="block-42-text">
-                                <div class="block-42-label">Today Prayer's:</div>
-                                <div class="block-42-title mx-2"><a href="#"><p style={{fontSize:'10px', fontWeight:'bolder'}}>I Ask You My Divine To Guide Me At Each Step.I Ask You My Lord To Help Me Live Each Moment With Complete Consciousness.Thank You My Lord ,Thank You My Divine.</p></a></div>
+                                <div class="block-42-label" style={{paddingRight:'10px'}}>Today Prayer's:</div>
+                                <div class="heading mb-4"><a href="#"><p style={{fontSize:'12px', fontWeight:'bold'}}>I Ask You My Divine To Guide Me At Each Step.I Ask You My Lord To Help Me Live Each Moment With Complete Consciousness.Thank You My Lord ,Thank You My Divine.</p></a></div>
                                 
                             </div>
-                            <div class="block-42-icons ml-auto">
+                          
+                        </div>
+                        </div>
+                        <div class="block-42-icons ml-auto text-center">
                                 <a href="#" class="fa fa-video-camera pl-0"></a>
                         <a>
                                 
@@ -38,8 +41,6 @@ export default class DailyPrayerBar extends Component {
                                 <a href="#" class="fa fa-book"></a>
                             </div>
                             
-                        </div>
-                        </div>
                     </div>
                 </section>
             </Fragment> 

@@ -21,8 +21,8 @@ export default class Home extends Component {
           <DailyPrayerBar />
           <AboutGC />
           <Miracles />
-          <LatestEvent />
           <Insta />
+          <LatestEvent />
           <Footer/>
         </div>
     )
