@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Loader from './Utils/Loader.js';
+//import Loader from './Utils/Loader.js';
 import Header from './SubComponent/Header.js';
 import HomeBanner from './SubComponent/HomeBanner.js';
 import DailyPrayerBar from './SubComponent/DailyPrayerBar.js';
@@ -15,7 +15,7 @@ export default class Home extends Component {
   render() {
     return(
         <div className="wrap">
-          <Loader />
+        
           <Header />
           <HomeBanner />
           <DailyPrayerBar />
