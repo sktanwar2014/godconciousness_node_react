@@ -4,22 +4,13 @@ import React, { Component } from 'react';
 export default class AboutDimpleAnil extends Component {
     render() {
       return(     
-    //      <div>
-    
-    //        <div class="background">
-    // <div class="transbox">
-    //   <div class="container">
-    //     <div class="row mt-5">  
-
-    //       <div class="col-12">
-           
+ 
         <div class="col-md-8 pl-md-5">
               <div class="container">
                   <div class="row">
-            <p class=" text-justify" style={{color: 'black',fontsize: '18px' ,margin: '0px',margintop: '-8px'}}>
+              <p class=" text-justify" style={{color: 'black',fontsize: '18px' ,margin: '0px',margintop: '-8px'}}>
 
-            {/* <img src="http://godsconsciousness.com/images/auntyportrait.jpg" alt="" class="img-fluid img-shadow float-left mr-3" style={{maxwidth: '100%',width: '500px',height:' 550px'}}/> */}
-
+           
             Dimple Anil is a
               Jammu
               (India) born Educationist, Radio Broadcaster, Theatre Artist with Masters in English Literature, Education,
@@ -42,19 +33,8 @@ export default class AboutDimpleAnil extends Component {
               Radio and TV plays as an anchor, actor and director.
 
             </p>
-            <img src="http://godsconsciousness.com/images/auntyportrait.jpg" alt="" class="img-fluid img-shadow float-left mr-3" style={{maxwidth: '100%',width: '500px',height:' 550px'}}/> 
-            </div>
-           </div> 
-          {/* </div>
-
-        </div>
-      </div> */}
-  
-           <div class="container">
-                  <div class="row">
-                   <div class="col-lg-12  col-md-12">
-                      <div class="col-md-10 offset-md-1">
-                            <p class="mt-3 text-justify" style={{color: 'black' , fontsize: '14px' , marginleft: '-26px',marginright: '-30px'}}>In her notable career
+            <img src="http://godsconsciousness.com/images/auntyportrait.jpg" alt="" class="img-fluid img-shadow  mr-3"/> 
+            <p class=" text-justify" style={{color: 'black' ,marginTop:'20px', fontsize: '14px' }}>In her notable career
                 spanning over three decades, Dimple Anil has garnered particular acclaim and organised many a workshops on
                 Youth Leadership, Personality Development, Parents – Teacher Associations, Counselling Single Parents,
                 Stress Management, Personal Development, Personal Effectiveness, Life Skills, Attitudes and Values,
@@ -62,40 +42,15 @@ export default class AboutDimpleAnil extends Component {
               <p class="mt-3 text-justify" style={{color: 'black', fontsize: '14px',marginleft: '-26px' ,marginright: '-30px'}}> Music and Performing Arts,Organisational Behaviour,Recording, Organising and Interpreting Data, Goals of Misbehaviour, Happiness Quotient, Dimensions of Learning, Teaching Learners with Learning Difficulties and Learning Disabilities, Micro Teaching,Accelerated Learning, Curriculum Planning and Implementation, Creative Problem Solving Techniques,
                 Diverse/ Minority Community Relations, Aiding Solutions for Children afflicted with substance abuse are some of her highly celebrated workshops.
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12  col-md-12">
-            <center>
-          
-            </center>
-            <div class="col-md-10 offset-md-1">
-              <p class="mt-3 text-justify" style={{color: 'black',fontsize: '14px',marginleft: '-26px',marginright: '-30px'}}>
-                <img src="images/pic2.jpg" alt="" class="img-fluid float-right magazineimages"/>
+         
+              <p class="text-justify" style={{color: 'black',fontsize: '14px',marginleft: '-26px',marginright: '-30px'}}>
+                <img src="images/pic2.jpg" alt="" class="img-fluid img-shadow  magazineimages" />
                Working with India'stop notch CEOS, CFOs, Educationists, Healers et el who seek her guidance in dealing with issues in their
                 personal and professional life, Dimple Anil is currently has travelled the world extensively and one of
                 the very few true Guide &amp; Teacher who is clearly and truthfully working only to build a society of
                 Conscious Beings which each of us is born to evolve into.</p>
-              <p class="mt-3 text-justify" style={{color: 'black',fontsize: '14px',marginleft: '-26px',marginright: '-30px'}}>To live for our HIGHER PURPOSE by being HAPPY at all times and being of SERVICE to the world by being KIND and RIGHT. Her Humanitarian and Philanthropist approach is helping many CREATE a Life by manifesting MIRACLES.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-12  col-md-12">
-            <center>
-             
-            </center>
-            <div class="col-md-10 offset-md-1">
+              <p class=" text-justify" style={{color: 'black',fontsize: '14px',marginleft: '-26px',marginright: '-30px'}}>To live for our HIGHER PURPOSE by being HAPPY at all times and being of SERVICE to the world by being KIND and RIGHT. Her Humanitarian and Philanthropist approach is helping many CREATE a Life by manifesting MIRACLES.</p>
+         
               <p class="mt-3 text-justify" style={{color: 'black',fontsize: '14px',marginleft: '-26px', marginright: '-30px'}}>In 1972 at the tender
                 age of 12, Dimple Anil had a Clairvoyant Experience which changed her life. She has a unique power to
                 connect with our loved ones (those who have crossed over and no longer live in physical body).</p>
@@ -105,18 +60,9 @@ export default class AboutDimpleAnil extends Component {
                 DIRECTIONS and GUIDELINES from THEM. She is not an oracle or an astrologer but a GIFTED being who is
                 voraciously at God speed sharing her experiences and THEIR MESSAGES for the benefit of this world.
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
+           
 
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12  col-md-12">
-            <center>
-              {/* <!-- <h3 style="margin-top: 30px;color: white;">ORAGANISED WORKSHOPS ON</h3> --> */}
-            </center>
-            <div class="col-md-10 offset-md-1">
+     
               <p class="mt-3 text-justify" style={{color: 'black',fontsize: '14px',marginleft: '-26px',marginright: '-30px'}}>
                 Gods Consciousness is about 5 years old and is a group of people (men, women, youngsters, elders ) who
                 take ownership of everything good, bad, ugly that has transpired in their lives. They follow consciously
@@ -133,15 +79,11 @@ export default class AboutDimpleAnil extends Component {
                 gratis. SHE DOES NOT CHARGE FOR THE SERVICES THROUGH HER.
 
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
+          
 
-//     </div>
-// </div>
-    
-//           </div>
+     </div> 
+     </div>
+      </div>
       )
     }
 }

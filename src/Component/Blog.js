@@ -13,9 +13,9 @@ export default class Blog extends Component {
                       <div class="row align-items-center justify-content-center site-hero-inner">
                         <div class="col-md-8 text-center">
                          <div class="mb-5 element-animate fadeInUp element-animated">
-                         <div class="col-md-8 text-center">  
+                         {/* <div class="col-md-8 text-center">  
                   <h1 class="heading mb-4" style={{marginTop:'100px', color:'white', fontSize:'70px', fontWeight:'lighter'}}>Blog's</h1>
-                </div>
+                </div> */}
                         </div>
                       </div>
                      </div>
@@ -24,7 +24,7 @@ export default class Blog extends Component {
             </section>
                      
                      <div>
-                     <h6 style={{textAlign:'center', padding:'5px 5px 5px 5px'}}>Blogs Coming Soon</h6>
+                     <h6 style={{textAlign:'center', padding:'80px 5px 80px 5px'}}>Blogs Coming Soon</h6>
                      </div>
 
             <Footer />

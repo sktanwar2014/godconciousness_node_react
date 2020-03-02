@@ -30,9 +30,9 @@ export default function Miracle(){
             <Header />
             <section data-stellar-background-ratio="0.5" style= {{backgroundImage: 'URL(images/Miracle.jpeg)', marginBottom:'50px', backgroundSize:'cover', height:'340px'}}>
                 <div class="row align-items-center justify-content-center site-hero-inner">
-                  <div class="col-md-8 text-center">  
+                  {/* <div class="col-md-8 text-center">  
                   <h1 class="heading mb-4" style={{marginTop:'100px', fontWeight:'lighter',color:'white',fontSize:'70px'}}>Miracle</h1>
-                </div>
+                </div> */}
               </div>            
           </section>
 

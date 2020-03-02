@@ -35,9 +35,9 @@ export default function Direction (){
                      <Header />
                   <section data-stellar-background-ratio="0.5" style= {{backgroundImage: 'URL(images/D.jpg)', backgroundSize:'cover', height:'260px'}}>
                 <div class="row align-items-center justify-content-center site-hero-inner">
-                  <div class="col-md-8 text-center">  
+                  {/* <div class="col-md-8 text-center">  
                   <h1 class="heading mb-4" style={{marginTop:'80px',fontWeight:'lighter',color:'white',fontSize:'70px'}}>Direction's</h1>
-                </div>
+                </div> */}
               </div>            
           </section>
       <section className="site-section bg-light">

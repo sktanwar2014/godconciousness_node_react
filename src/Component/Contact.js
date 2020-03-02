@@ -13,9 +13,9 @@ export default class Contact extends Component {
                 <div class="row align-items-center justify-content-center site-hero-inner">
                      <div class="col-md-8 text-center">
                        <div class="mb-5 element-animate fadeInUp element-animated">
-                       <div class="col-md-8 text-center">  
+                       {/* <div class="col-md-8 text-center">  
                   <h1 class="heading mb-4" style={{marginTop:'100px', color:'white',fontWeight:'lighter',fontSize:'70px'}}>Contact US</h1>
-                </div>                  
+                </div>                   */}
                         </div>
                       </div>
                     </div>
