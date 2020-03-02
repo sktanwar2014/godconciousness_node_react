@@ -15,7 +15,7 @@ export default function FullContentViewDialog({title, content}){
                   {content}
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" style={{backgroundColor:'#6c5b7b'}}>Close</button>
                 </div>
               </div>
             </div>

@@ -4,7 +4,8 @@ import Footer from './SubComponent/Footer.js';
 import FullContentViewDialog from './SubComponent/FullContentViewDialog';
 import Direction from './SubComponent/Direction.js';
 import OBES from './SubComponent/OBES.js';
-
+import { DatePicker } from "@material-ui/pickers";
+//import MuiPickersUtilsProvider from 'MuiPickersUtilsProvider';
 let contentArray = [
   {content : "Me And My Family Are In Bliss Today.We Are Together And Happy,We Are In Complete Gratitude Thank You Divine ,Thank You Universe ,Thank You Divine.",image:"image_tall_1.jpg"},
   {content : "My Lord,My Power Envelope Me And My Family In Golden Ball Of Divine Light Of Complete Protection.Thank You My Lord ,Thank You My Power.",image:"image_tall_2.jpg"},
@@ -19,11 +20,13 @@ let Arr = [
   {content: "I Am Blessed Today ,I Am Ready For A Miracle Today I Am In Receiving Mode Today Because I Am Sowing Consciously Conscientiously And Carefully.Thank You My Lord,Thank You My Divine,Thank You My Lord.",imageName:"image_tall_2.jpg"},
   {content: "I Ask For Divine Wisdom My Lord So That I Live Each Moment With Deep Consciousness.Thank You Divine Thank You Universe,Thank You Divine.",imageName:"image_tall_3.jpg"},
 ];
-export default function About() {
+export default function DailyPrayer() {
     // let aboutKey = 1;
     const [showContentDialog, setShowContentDialog] = useState(false);
     const [dialogContent, setDialogContent]  = useState(false);
  
+    const [date, changeDate] = useState(new Date());
+
     const handleDialogeOpen = (objectIndex) => {
      setDialogContent(contentArray[objectIndex].content);
      setShowContentDialog(true);
@@ -66,6 +69,15 @@ export default function About() {
                       <li className={aboutKey===3 ? 'active' : ''}><a href='' onClick = {(e)=>{e.preventDefault(); setAboutKey(3)}}>2018</a></li>
                       <li className={aboutKey===4 ? 'active' : ''}><a href='' onClick = {(e)=>{e.preventDefault(); setAboutKey(4)}}>2017</a></li>
                     </ul>
+                 
+  {/* <DatePicker
+        autoOk
+        variant="static"
+         openTo="year"
+         value={date}
+         onChange={changeDate}
+      /> */}
+              
                   </div>
                 </div>
                 <div class="col-md-8 pl-md-5">
