@@ -11,6 +11,23 @@
   margin:0;
   box-sizing: border-box;
 }
+.navbar{
+  background-color:grey;
+  border-color:grey;
+}
+.navbar .nav-pills >li >a {
+    color: black;
+ }
+   .navbar .nav-pills > li > a:hover {
+     background-color: gold;
+     color: black;
+ }
+
+.navbar .nav-pills .active {
+   background-color: gold;
+   color:Black ;
+   font-weight:bold;
+}
 
 /* Our wrapper */
 .wrapper{
