@@ -5,7 +5,7 @@ export default class HomeBanner extends Component {
     render() {
         return(
             <Fragment>
-            <section className="site-hero overlay" data-stellar-background-ratio='0.5'  style={{backgroundImage: 'url(images/GC/Auntypic2.jpg)'}}>
+            <section className="site-hero overlay" data-stellar-background-ratio='0.9'  style={{backgroundImage: 'url(images/GC/Auntypic2.jpg)'}}>
             <div class="container">
 <div class="row align-items-center justify-content-center site-hero-inner">
 <div class="col-md-8 text-center">

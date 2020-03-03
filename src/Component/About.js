@@ -17,7 +17,7 @@ export default function About() {
       return(
         <div className="wrap">        
           <Header />
-          <section class="site-hero overlay" data-stellar-background-ratio='0.5' style= {{backgroundImage: 'URL(images/GC/flower.jpg)'}}>
+          <section class="img-responsive" data-stellar-background-ratio='0.5' style={{backgroundImage: 'url("images/GC/flower.jpg")' , backgroundsize: 'cover' , height: '260px' , backgroundposition: '0% -18.1875px'}}>
             <div class="container">
               <div class="row align-items-center justify-content-center site-hero-inner">
                 <div class="col-md-8 text-center">
