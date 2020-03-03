@@ -43,7 +43,7 @@ export default function Header() {
                                 <div className="dropdown-menu" aria-labelledby="dropdown05">
                                     <a className="dropdown-item" href="/DailyPrayer">Daily Prayer</a>
                                     <a className="dropdown-item" href="/Direction">Direction</a>
-                                    <a className="dropdown-item" href="/OBES">Obe's</a>
+                                    <a className="dropdown-item" href="/OBES">OBE</a>
                                 </div>
                             </li>
                             <li className={tabs === 'miracles' ? "nav-item active": 'nav-item'}  style={{marginRight:'50px'}}>

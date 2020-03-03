@@ -48,6 +48,7 @@ export default function Miracle(){
                         return(
                           <div class="col-md-6 col-lg-4 mb-5">
                             <div class="block-20">
+                            
                               <figure style={{width:'100%'}}>
                                   <a href="blog-single.html"><img src={"images/" + imageArray[index].name} alt="Image placeholder" class="img-fluid" /></a>
                               </figure>

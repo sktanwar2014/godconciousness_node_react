@@ -11,11 +11,11 @@ export default class Footer extends Component {
         <div class="row">
           <div class="col-md-5">
             
-            <h6 class="footer-heading mb-4 text-white" style={{paddingtop: '28px',  fontWeight: 'bold' , fontsize:'10px'}}>ABOUT</h6>
+            <h6 class="footer-heading mb-4 text-white" style={{paddingtop: '28px',marginBottom:'500px',  fontWeight: 'bold' , fontsize:'10px'}}>ABOUT</h6>
             <p style={{color:'white'}}>Prayers are SIMPLE and DOABLE and have all those lead a more peaceful, successful, glorious, magnificent,
 		healthy,
 		prosperous and abundant life.</p>
-            <p><a  class="footer-heading mb-4 text-white">Read More</a></p>
+            <p ><a  class="footer-heading mb-4 text-white">Read More</a></p>
           </div>
           
               <div class="col-md-4 col-md-offset-1">

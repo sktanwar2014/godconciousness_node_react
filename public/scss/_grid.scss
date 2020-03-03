@@ -6,7 +6,7 @@
   .container {
     @include make-container();
     @include make-container-max-widths();
-    
+    margin-top: 50px;
   }
 }
 

@@ -88,7 +88,7 @@ export default function DailyPrayer() {
 <div class="block-44-image"><img src={"images/" + contentArray[index].image }alt="Image placeholder"/></div>
 <div class="block-44-text">
 <h3 class="block-44-heading" style={{color:'#6c5b7b',textAlign:'justify',fontSize:'18px',lineHeight:'25px'}}><a>{(data.content).substring(0,110) + '...'}</a></h3>
-<div class="block-44-meta">Posted on June 28, 2018, Pastor Gregg Smith</div>
+<div class="block-44-meta">Posted on June 28, 2018</div>
 <p><a href="" onClick = {(e)=>{ handleDialogeOpen(index)}} data-toggle="modal" data-target="#exampleModalLong">Read More</a></p>
 </div>
 </div>
@@ -109,7 +109,7 @@ export default function DailyPrayer() {
 <div class="block-44-image"><img src={"images/" + Arr[index].imageName }alt="Image placeholder"/></div>
 <div class="block-44-text">
 <h3 class="block-44-heading"style={{color:'#6c5b7b',textAlign:'justify',fontSize:'18px',lineHeight:'25px'}}><a>{(data.content).substring(0,110) + '...'}</a></h3>
-<div class="block-44-meta">Posted on June 28, 2018, Pastor Gregg Smith</div>
+<div class="block-44-meta">Posted on June 28, 2018</div>
 <p><a href="" onClick = {(e)=>{ handleDialogeOpen(index)}} data-toggle="modal" data-target="#exampleModalLong">Read More</a></p>
 </div>
 </div>

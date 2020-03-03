@@ -1,5 +1,4 @@
 
-
 import React, { useState,Fragment } from 'react';
 import Header from './Header';
 import Footer from './Footer'
@@ -35,20 +34,19 @@ export default function Direction (){
         return(
               <div>
                      <Header />
-                     <section class="site-hero overlay" data-stellar-background-ratio="0.5" style={{backgroundImage: 'URL(images/D.jpg)' , backgroundposition: '50% 54px'}}>
-<div class="container">
-<div class="row align-items-center justify-content-center site-hero-inner">
-<div class="col-md-8 text-center">
-<div class="mb-5 element-animate fadeInUp element-animated">
-{/* <div class="block-17">
-<h1 class="heading mb-4">Sermons</h1>
-<div class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde doloremque necessitatibus quidem itaque illum nulla dolores, tempora corporis eius, fuga natus esse rem animi. Doloribus animi, reiciendis voluptatum eum ullam.</div>
-</div> */}
-</div>
-</div>
-</div>
-</div>
-</section>
+                     <section className="site-hero overlay" data-stellar-background-ratio="0.5" style={{backgroundImage: 'Url(images/D.jpg)' , backgroundsize: 'cover' , height: '260px', backgroundposition: '0% -18.1875px'}}>
+            <div class="container">
+              <div class="row align-items-center justify-content-center site-hero-inner">
+                <div class="col-md-8 text-center">
+                  <div class="mb-5 element-animate fadeInUp element-animated">
+                    {/* <div class="block-17">
+                      <h1 class="heading mb-4" style="margin-top: 80px; color: white; font-size: 70px;">God Consciousness</h1>
+                    </div> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           <section class="site-section">
             <div class="container">
               <div class="row">
