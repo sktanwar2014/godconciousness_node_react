@@ -8,11 +8,18 @@ export default class OBES extends Component {
       return(
       <div>
         <Header/>
-         <section data-stellar-background-ratio="0.5" style= {{backgroundImage: 'URL(images/obe.jpg)', backgroundSize:'cover', height:'260px'}}>
-                <div class="row align-items-center justify-content-center site-hero-inner">
-                  <div class="col-md-8 text-center">  
+          <section class="site-hero overlay" data-stellar-background-ratio='0.5' style= {{backgroundImage: 'URL(images/obe.jpg)'}}>
+            <div class="container">
+              <div class="row align-items-center justify-content-center site-hero-inner">
+                <div class="col-md-8 text-center">
+                  <div class="mb-5 element-animate fadeInUp element-animated">
+                    {/* <div class="block-17">
+                      <h1 class="heading mb-4" style="margin-top: 80px; color: white; font-size: 70px;">God Consciousness</h1>
+                    </div> */}
+                  </div>
                 </div>
-              </div>            
+              </div>
+            </div>
           </section>
           <center>
 

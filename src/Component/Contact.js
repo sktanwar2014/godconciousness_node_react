@@ -8,19 +8,18 @@ export default class Contact extends Component {
           <div className="wrap">
         
             <Header />
-            <section data-stellar-background-ratio="0.5" style= {{backgroundImage: 'URL(images/contact.jpeg)', backgroundSize:'cover', height:'340px'}}>
+            <section class="site-hero overlay" style= {{backgroundImage: 'URL(images/contact.jpeg)'}}>
             <div class="container">
-                <div class="row align-items-center justify-content-center site-hero-inner">
-                     <div class="col-md-8 text-center">
-                       <div class="mb-5 element-animate fadeInUp element-animated">
-                       {/* <div class="col-md-8 text-center">  
-                  <h1 class="heading mb-4" style={{marginTop:'100px', color:'white',fontWeight:'lighter',fontSize:'70px'}}>Contact US</h1>
-                </div>                   */}
-                        </div>
-                      </div>
-                    </div>
-            </div>  
-
+              <div class="row align-items-center justify-content-center site-hero-inner">
+                <div class="col-md-8 text-center">
+                  <div class="mb-5 element-animate fadeInUp element-animated">
+                    {/* <div class="block-17">
+                      <h1 class="heading mb-4" style="margin-top: 80px; color: white; font-size: 70px;">God Consciousness</h1>
+                    </div> */}
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
           <section class="site-section bg-light">
 <div class="container">

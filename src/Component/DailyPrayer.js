@@ -40,21 +40,19 @@ export default function DailyPrayer() {
       return(
         <div className="wrap">        
           <Header />
-          <section data-stellar-background-ratio="0.5" style= {{backgroundImage: 'URL(images/GC/p.jpg)',  backgroundSize:'cover', height:'260px'}}>
-<div class="container">
-<div class="row align-items-center justify-content-center site-hero-inner">
-<div class="col-md-8 text-center">
-<div class="mb-5 element-animate fadeInUp element-animated">
-<div class="block-17">
-   
- {/* <h1 class="heading mb-4" style={{marginTop:'80px',fontWeight:'lighter',fontSize:'70px'}}>Prayers</h1> */}
-{/* <div class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde doloremque necessitatibus quidem itaque illum nulla dolores, tempora corporis eius, fuga natus esse rem animi. Doloribus animi, reiciendis voluptatum eum ullam.</div>  */}
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+          <section class="site-hero overlay" data-stellar-background-ratio='0.5' style= {{backgroundImage: 'URL(images/GC/P.jpg)'}}>
+            <div class="container">
+              <div class="row align-items-center justify-content-center site-hero-inner">
+                <div class="col-md-8 text-center">
+                  <div class="mb-5 element-animate fadeInUp element-animated">
+                    {/* <div class="block-17">
+                      <h1 class="heading mb-4" style="margin-top: 80px; color: white; font-size: 70px;">God Consciousness</h1>
+                    </div> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
     
 
         <section class="site-section bg-light">

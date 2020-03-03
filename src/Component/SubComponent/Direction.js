@@ -1,3 +1,5 @@
+
+
 import React, { useState,Fragment } from 'react';
 import Header from './Header';
 import Footer from './Footer'
@@ -33,14 +35,47 @@ export default function Direction (){
         return(
               <div>
                      <Header />
-                  <section data-stellar-background-ratio="0.5" style= {{backgroundImage: 'URL(images/D.jpg)', backgroundSize:'cover', height:'260px'}}>
-                <div class="row align-items-center justify-content-center site-hero-inner">
-                  {/* <div class="col-md-8 text-center">  
-                  <h1 class="heading mb-4" style={{marginTop:'80px',fontWeight:'lighter',color:'white',fontSize:'70px'}}>Direction's</h1>
-                </div> */}
-              </div>            
-          </section>
-      <section className="site-section bg-light">
+                     <section class="site-hero overlay" data-stellar-background-ratio="0.5" style={{backgroundImage: 'URL(images/D.jpg)' , backgroundposition: '50% 54px'}}>
+<div class="container">
+<div class="row align-items-center justify-content-center site-hero-inner">
+<div class="col-md-8 text-center">
+<div class="mb-5 element-animate fadeInUp element-animated">
+{/* <div class="block-17">
+<h1 class="heading mb-4">Sermons</h1>
+<div class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde doloremque necessitatibus quidem itaque illum nulla dolores, tempora corporis eius, fuga natus esse rem animi. Doloribus animi, reiciendis voluptatum eum ullam.</div>
+</div> */}
+</div>
+</div>
+</div>
+</div>
+</section>
+          <section class="site-section">
+            <div class="container">
+              <div class="row">
+                
+              {contentArray.map((data, index) => {
+                return(
+              <div class="col-md-6 col-lg-4 mb-5">
+                <div class="block-20">
+                  <figure style={{width: '100%;'}}>
+                    <a href="blog-single.html">
+                    <img src={"images/" + data.imageName} alt="Image placeholder" className="img-fluid" />
+                    </a>
+                  </figure>
+                  <div className="text text-center">
+                          <h3 className="heading"><a href="">{data.title}</a></h3>
+                          <p style={{textAlign:'justify'}}>{(data.content).substring(0,50) + '...'}</p>
+                          <p><a href="" onClick = {(e)=>{ handleDialogeOpen(index)}} data-toggle="modal" data-target="#exampleModalLong">Read More</a></p>
+                        </div>
+                  </div>
+                  </div>
+                    )
+                  })}
+                  
+                      </div>
+                      </div>
+                   </section>
+      {/* <section className="site-section bg-light">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -62,11 +97,7 @@ export default function Direction (){
                         <figure>
                           <a href="#"><img src={"images/" + data.imageName} alt="Image placeholder" className="img-fluid" /></a>
                         </figure>
-                        <div className="text text-center">
-                          <h3 className="heading"><a href="">{data.title}</a></h3>
-                          <p style={{textAlign:'justify'}}>{(data.content).substring(0,50) + '...'}</p>
-                          <p><a href="" onClick = {(e)=>{ handleDialogeOpen(index)}} data-toggle="modal" data-target="#exampleModalLong">Read More</a></p>
-                        </div>
+                      
                       </div>
                     </div>
                   </div>  
@@ -77,7 +108,7 @@ export default function Direction (){
           </div>  
         </div>
       </div>
-    </section> 
+    </section>  */} 
     {showContentDialog ? <FullContentViewDialog title={"Content"} content={dialogContent} /> : null }
     <Footer/>
     </div>
