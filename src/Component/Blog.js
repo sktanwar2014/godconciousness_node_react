@@ -13,6 +13,7 @@ export default class Blog extends Component {
 </div>
                      
                      <div>
+                      
                      <h6 style={{textAlign:'center', padding:'80px 5px 80px 5px'}}>Blogs Coming Soon</h6>
                      </div>
 

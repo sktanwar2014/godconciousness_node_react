@@ -26,7 +26,9 @@ export default function Header() {
                 <header role="banner">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container">
-                    <a className="navbar-brand absolute" href="/" > <img src='images/pic.png' width="50" height="50"></img></a>
+                    <img src='images/pic.png' width="50" height="50" alt="" class="a"/>  
+                    <div style={{fontSize:'25px',color:'#6c5b7b',fontWeight:'bold',marginLeft:'20px'}}>God Consciousness</div>  
+                    
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>

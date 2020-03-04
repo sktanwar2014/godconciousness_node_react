@@ -5,6 +5,12 @@ import FullContentViewDialog from './SubComponent/FullContentViewDialog';
 import Direction from './SubComponent/Direction.js';
 import OBES from './SubComponent/OBES.js';
 import { DatePicker } from "@material-ui/pickers";
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+
+// pick a date util library
+import MomentUtils from '@date-io/moment';
+import DateFnsUtils from '@date-io/date-fns';
+import LuxonUtils from '@date-io/luxon';
 //import MuiPickersUtilsProvider from 'MuiPickersUtilsProvider';
 let contentArray = [
   {content : "Me And My Family Are In Bliss Today.We Are Together And Happy,We Are In Complete Gratitude Thank You Divine ,Thank You Universe ,Thank You Divine.",image:"image_tall_1.jpg"},
@@ -51,12 +57,16 @@ export default function DailyPrayer() {
                 <div class="col-md-4">
                   <div class="block-36">
                     <h3 class="block-36-heading">Prayer's Year's</h3>
-                    <ul> 
+                    
+                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Root />
+    </MuiPickersUtilsProvider>
+                    {/* <ul> 
                       <li className={aboutKey===1 ? 'active' : ''}><a href='' onClick = {(e)=>{e.preventDefault(); setAboutKey(1)}}>2020</a></li>
                       <li className={aboutKey===2 ? 'active' : ''}><a href='' onClick = {(e)=>{e.preventDefault(); setAboutKey(2)}}>2019</a></li>
                       <li className={aboutKey===3 ? 'active' : ''}><a href='' onClick = {(e)=>{e.preventDefault(); setAboutKey(3)}}>2018</a></li>
                       <li className={aboutKey===4 ? 'active' : ''}><a href='' onClick = {(e)=>{e.preventDefault(); setAboutKey(4)}}>2017</a></li>
-                    </ul>
+                    </ul> */}
                  
   {/* <DatePicker
         autoOk

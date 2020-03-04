@@ -34,9 +34,12 @@ export default function Miracle(){
           <section class="site-section">
                 <div class="container">
                   <div class="row">
+                  
                     { contentArray.map((data, index) => {
                         return(
+                            
                           <div class="col-md-6 col-lg-4 mb-5">
+                            
                             <div class="block-20">
                             
                               <figure style={{width:'100%'}}>
