@@ -40,11 +40,12 @@ export default function Miracles (){
               </div>
             </div>      
           </div>
-        <div className="block-13" style={{marginLeft:'90px'}}>
+        <div className="block-13" style={{marginLeft:'20px'}}>
           <div className="nonloop-block-13 owl-carousel owl-loaded owl-drag">
             <div className="owl-stage-outer">
-              <section class="site-section"><div class="container"><div class="row">
-                <div class="col-md-6 col-lg-4 mb-5">1
+              <section class="site-section"style={{padding: '0px'}}>
+                <div class="container"><div class="row">
+                <div class="col-md-6 col-lg-4 mb-5">
                   <div class="block-20">
                     <figure style={{width: '100%'}}>
                       <a href="blog-single.html">

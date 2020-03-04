@@ -17,19 +17,9 @@ export default function About() {
       return(
         <div className="wrap">        
           <Header />
-          <section class="img-responsive" data-stellar-background-ratio='0.5' style={{backgroundImage: 'url("images/GC/flower.jpg")' , backgroundsize: 'cover' , height: '260px' , backgroundposition: '0% -18.1875px'}}>
-            <div class="container">
-              <div class="row align-items-center justify-content-center site-hero-inner">
-                <div class="col-md-8 text-center">
-                  <div class="mb-5 element-animate fadeInUp element-animated">
-                    {/* <div class="block-17">
-                      <h1 class="heading mb-4" style="margin-top: 80px; color: white; font-size: 70px;">God Consciousness</h1>
-                    </div> */}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <div class="container-fluid" style={{padding: '0px'}}>
+             <img src="images/GC/flower.jpg" alt="" class="img-responsive" style={{width: '100%'}}/>
+             </div>
     
 
         <section class="site-section bg-light">

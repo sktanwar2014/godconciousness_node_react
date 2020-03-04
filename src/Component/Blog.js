@@ -8,19 +8,9 @@ export default class Blog extends Component {
           <div className="wrap">
         
             <Header />
-            <section class="site-hero overlay" data-stellar-background-ratio='0.5' style= {{backgroundImage: 'URL(images/blog.jpeg)'}}>
-            <div class="container">
-              <div class="row align-items-center justify-content-center site-hero-inner">
-                <div class="col-md-8 text-center">
-                  <div class="mb-5 element-animate fadeInUp element-animated">
-                    {/* <div class="block-17">
-                      <h1 class="heading mb-4" style="margin-top: 80px; color: white; font-size: 70px;">God Consciousness</h1>
-                    </div> */}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            <div className="container-fluid" style={{padding: '0px!important'}}>
+  <img src="images/blog.jpeg" alt="" className="img-responsive" style={{width: '100%', height: '350px'}} />
+</div>
                      
                      <div>
                      <h6 style={{textAlign:'center', padding:'80px 5px 80px 5px'}}>Blogs Coming Soon</h6>

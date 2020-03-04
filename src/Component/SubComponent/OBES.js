@@ -17,11 +17,9 @@ export default function OBES()  {
     return(
       <div>
         <Header/>
-         <section data-stellar-background-ratio="0.5" style= {{backgroundImage: 'URL(images/obe.jpg)', backgroundSize:'cover', height:'260px'}}>
-           <div class="row align-items-center justify-content-center site-hero-inner">
-              <div class="col-md-8 text-center"></div>
-            </div>            
-          </section>
+        <div className="container-fluid" style={{padding: '0px!important'}}>
+  <img src="images/obe.jpg" alt="" className="img-responsive" style={{width: '100%', height: '350px'}} />
+</div>
           <center>
   <div className="container">
     <div className="row">
