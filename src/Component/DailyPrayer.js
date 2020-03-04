@@ -9,8 +9,8 @@ import MomentUtils from '@date-io/moment';
 import DateFnsUtils from '@date-io/date-fns';
 import LuxonUtils from '@date-io/luxon';
 import { makeStyles } from '@material-ui/core/styles';
-import { create } from 'jss';
-import { StylesProvider, jssPreset } from '@material-ui/core/styles';
+
+
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     color: 'white',
     height: 48,
     padding: '0 30px',
+    
   },
 });
 
@@ -77,7 +78,7 @@ export default function DailyPrayer() {
                   <div class="block-36">
                     <h3 class="block-36-heading">Prayer's Year's</h3>
                     {/* <div style={{color:'#6c5b7b', textAlign:'center'}}/\> */}
-              <StylesProvider jss={jss}>
+         <center>  
   <MuiPickersUtilsProvider utils={DateFnsUtils}>
   <button className={classes.root}>Hook</button>
     <DatePicker 
@@ -88,7 +89,8 @@ export default function DailyPrayer() {
      
     />
   </MuiPickersUtilsProvider>
-</StylesProvider>
+       </center>
+
                       {/* <div>
                     <MuiPickersUtilsProvider  utils={DateFnsUtils}>
                       <DatePicker 
