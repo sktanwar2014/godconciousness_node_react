@@ -8,6 +8,7 @@ export default function Header() {
     const handleTabs = (tabValue) => {
         setTabs(tabValue);
     }
+   
         return(
             <Fragment>
                 <div className="block-45">

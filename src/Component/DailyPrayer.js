@@ -4,13 +4,27 @@ import Footer from './SubComponent/Footer.js';
 import FullContentViewDialog from './SubComponent/FullContentViewDialog';
 import Direction from './SubComponent/Direction.js';
 import OBES from './SubComponent/OBES.js';
-import { DatePicker } from "@material-ui/pickers";
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-
-// pick a date util library
+import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
 import DateFnsUtils from '@date-io/date-fns';
 import LuxonUtils from '@date-io/luxon';
+import { makeStyles } from '@material-ui/core/styles';
+import { create } from 'jss';
+import { StylesProvider, jssPreset } from '@material-ui/core/styles';
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  },
+});
+
+// pick a date util library
+
 //import MuiPickersUtilsProvider from 'MuiPickersUtilsProvider';
 let contentArray = [
   {content : "Me And My Family Are In Bliss Today.We Are Together And Happy,We Are In Complete Gratitude Thank You Divine ,Thank You Universe ,Thank You Divine.",image:"image_tall_1.jpg"},
@@ -27,17 +41,22 @@ let Arr = [
   {content: "I Ask For Divine Wisdom My Lord So That I Live Each Moment With Deep Consciousness.Thank You Divine Thank You Universe,Thank You Divine.",imageName:"image_tall_3.jpg"},
 ];
 export default function DailyPrayer() {
+  const classes = useStyles();
     // let aboutKey = 1;
     const [showContentDialog, setShowContentDialog] = useState(false);
     const [dialogContent, setDialogContent]  = useState(false);
- 
-    const [date, changeDate] = useState(new Date());
-
+    
     const handleDialogeOpen = (objectIndex) => {
      setDialogContent(contentArray[objectIndex].content);
      setShowContentDialog(true);
     }
     const [aboutKey, setAboutKey] = useState(1);
+
+    const [date, setDate] = useState(new Date);
+
+    const handleDate = (date) => {
+      setDate(date)
+    }
     // const handleChange = (value) => {
     //   console.log(value);
     //   setAboutKey(value);
@@ -57,10 +76,29 @@ export default function DailyPrayer() {
                 <div class="col-md-4">
                   <div class="block-36">
                     <h3 class="block-36-heading">Prayer's Year's</h3>
-                    
-                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Root />
-    </MuiPickersUtilsProvider>
+                    {/* <div style={{color:'#6c5b7b', textAlign:'center'}}/\> */}
+              <StylesProvider jss={jss}>
+  <MuiPickersUtilsProvider utils={DateFnsUtils}>
+  <button className={classes.root}>Hook</button>
+    <DatePicker 
+      autoOk
+      variant="static"
+      value={date}
+      onChange={handleDate}
+     
+    />
+  </MuiPickersUtilsProvider>
+</StylesProvider>
+                      {/* <div>
+                    <MuiPickersUtilsProvider  utils={DateFnsUtils}>
+                      <DatePicker 
+                        autoOk
+                        variant="static"
+                        value={date}
+                        onChange={handleDate}
+                        />
+                    </MuiPickersUtilsProvider>
+                    </div> */}
                     {/* <ul> 
                       <li className={aboutKey===1 ? 'active' : ''}><a href='' onClick = {(e)=>{e.preventDefault(); setAboutKey(1)}}>2020</a></li>
                       <li className={aboutKey===2 ? 'active' : ''}><a href='' onClick = {(e)=>{e.preventDefault(); setAboutKey(2)}}>2019</a></li>
