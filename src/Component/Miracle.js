@@ -34,7 +34,7 @@ export default function Miracle(){
           <section class="site-section">
                 <div class="container">
                   <div class="row">
-                  
+                 
                     { contentArray.map((data, index) => {
                         return(
                             

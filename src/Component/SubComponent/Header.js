@@ -18,7 +18,7 @@ export default function Header() {
                         <ul className="block-45-icons">
                         <li><a href="https://www.facebook.com/groups/429971720508946/"><span className="fa fa-facebook" /></a></li>
                         <li><a href="https://www.instagram.com/godsconsciousness_gc"><span className="fa fa-instagram" /></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCKeVsVRweYnZFBEZUSsE47A"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCKeVsVRweYnZFBEZUSsE47A"><i className="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                     </div>

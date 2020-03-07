@@ -80,7 +80,7 @@ export default function DailyPrayer() {
                     {/* <div style={{color:'#6c5b7b', textAlign:'center'}}/\> */}
          <center>  
   <MuiPickersUtilsProvider utils={DateFnsUtils}>
-  <button className={classes.root}>Hook</button>
+  
     <DatePicker 
       autoOk
       variant="static"
