@@ -24,19 +24,19 @@ export default class DailyPrayerBar extends Component {
                         </div>
                         <div class="block-42-icons ml-auto text-center">
                                 <a href="#" class="fa fa-video-camera pl-0"></a>
-                        <a>
+                                <a href="#"  className="fa fa-headphones"></a>
                                 
-                                   <span onClick={this.playAudio} className="fa fa-headphones"></span>
-                                          
-                             <audio className="audio-element">
+                                   {/* <span onClick={this.playAudio} className="fa fa-headphones"></span>
+                                           */}
+                             {/* <audio className="audio-element">
                                if (this.playAudio) {
                                       <source src="audio\01 - Pyaar Tenu Karda Gabru - DownloadMing.SE.mp3"></source>      
                                }
                               else{
                                   console.log("this.pauseAudio")
                               }
-                            </audio> 
-                        </a>
+                            </audio>  */}
+                       
                                 <a href="#" class="fa fa-cloud-download"></a>
                                 <a href="#" class="fa fa-book"></a>
                             </div>
