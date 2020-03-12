@@ -45,130 +45,48 @@ export default function Miracles (){
             <div className="owl-stage-outer">
               <section class="site-section"style={{padding: '0px'}}>
                 <div class="container"><div class="row">
-                <div class="col-md-6 col-lg-4 mb-5">
-                  <div class="block-20">
-                    <figure style={{width: '100%'}}>
-                      <a href="blog-single.html">
-                         <img src="images/pic3.jpeg" alt="Image placeholder" class="img-fluid"/>
-                      </a>
-                    </figure>
-                  <div class="text text-center">
-                    <h3 class="heading">
-                      <a href="#">I come from and got married into a joint family.</a>
-                    </h3>
-                    <div class="meta mb-3">
-                      <div>
-                        <a href="#">
-                          <span class="fa fa-calendar"></span> May 29, 2018</a>
-                      </div>
-                      <div>
-                       <a href="#">
-                       <span class="fa fa-user"></span> Admin</a>
-                      </div>
-                     <div>
-                      <a href="#">
-                       <span class="fa fa-comment"></span> 19</a>
-                     </div>
-                    </div>
-                     <p style={{textalign: 'justify'}}>I come from a joint family and got married into a joint family. In my new family, I saw that each one loved to...</p>
-                        <p>
-                          <a href="" data-toggle="modal" data-target="#exampleModalLong">Read More</a>
-                        </p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="block-20">
-                        <figure style={{width: '100%'}}>
-                          <a href="blog-single.html">
-                            <img src="images/believe.jpeg" alt="Image placeholder" class="img-fluid"/>
-                          </a>
-                        </figure>
-                     <div class="text text-center">
-                        <h3 class="heading">
-                          <a href="#">I come from and got married into a joint family.</a>
-                        </h3>
-                      <div class="meta mb-3">
-                        <div>
-                          <a href="#">
-                           <span class="fa fa-calendar"></span> May 29, 2018</a>
+                  {
+                    contentArray.map((data, index) => {
+                      return(
+                        <div class="col-md-6 col-lg-4 mb-5">
+                          <div class="block-20">
+                            <figure style={{width: '100%'}}>
+                              <a href="blog-single.html">
+                                <img src={"images/" + data.imageName} alt="Image placeholder" class="img-fluid"/>
+                              </a>
+                            </figure>
+                          <div class="text text-center">
+                            <h3 class="heading">
+                      <a href="#">{data.title}</a>
+                            </h3>
+                            <div class="meta mb-3">
+                              <div>
+                                <a href="#">
+                                  <span class="fa fa-calendar"></span> May 29, 2018</a>
+                              </div>
+                              <div>
+                              <a href="#">
+                              <span class="fa fa-user"></span> Admin</a>
+                              </div>
+                            <div>
+                              <a href="#">
+                              <span class="fa fa-comment"></span> 19</a>
+                            </div>
+                            </div>
+                      <p style={{textAlign:'justify'}}>{(data.content).substring(0,110) + '...'}</p>
+                                <p>
+                                  <a href="" data-toggle="modal" data-target="#exampleModalLong"  onClick = {(e)=>{ handleDialogeOpen(index)}}>Read More</a>
+                                </p>
+                            </div>
+                            </div>
                         </div>
-                          <div>
-                             <a href="#">
-                                <span class="fa fa-user"></span> Admin</a>
-                          </div>
-                               <div>
-                                  <a href="#">
-                                     <span class="fa fa-comment"></span> 19</a>
-                                </div>
-                      </div>
-                 <p style={{textalign: 'justify'}}>Life seems to be sorted fully.Thank you Dimple MA.Love you.I wanted a clean, spacious home.I have.I wanted to ...</p>
-                    <p>
-                       <a href="" data-toggle="modal" data-target="#exampleModalLong">Read More</a>
-                    </p>
-              </div>
-            </div>
-        </div>
-           <div class="col-md-6 col-lg-4 mb-5">
-              <div class="block-20">
-                 <figure style={{width: '100%'}}>
-                   <a href="blog-single.html">
-                     <img src="images/baby.jpeg" alt="Image placeholder" class="img-fluid"/>
-                   </a>
-                </figure>
-                 <div class="text text-center">
-                    <h3 class="heading">
-                         <a href="#">I come from and got married into a joint family.</a>
-                    </h3>
-                     <div class="meta mb-3">
-                        <div>
-                          <a href="#">
-                             <span class="fa fa-calendar"></span> May 29, 2018</a>
-                        </div>
-                      <div>
-                       <a href="#">
-                         <span class="fa fa-user"></span> Admin</a>
-                      </div>
-                    <div>
-                      <a href="#"><span class="fa fa-comment"></span> 19</a>
-                    </div>
-                  </div>
-                   <p style={{textalign: 'justify'}}>Please share I conceived after four years of marriage, loads and loads of efforts. I was happy but insecure an...</p>
-                      <p>
-                       <a href="" data-toggle="modal" data-target="#exampleModalLong">Read More</a>
-                      </p>
-               </div>
-              </div>
-             </div>
-                                                                                              
-                                                                                               
-                                                                                               
-                                                                                                    
-                                                                                                      
+                      )
+                    })
+                  }                                                                                         
        </div>
       </div>
     </section>
-            {/* <div className="owl-stage" style={{transform: 'translate3d(0px, 0px, 0px)', transition: 'all 0.25s ease 0s', width: '2540px', paddingLeft: '150px', paddingRight: '150px'}}>
-              {contentArray.map((data, index) => {
-                return(
-                  <div className="owl-item active" style={{width: '353.333px', marginRight: '20px'}}>
-                    <div className="item">
-                      <div className="block-20">
-                        <figure>
-                          <a href="#"><img src={"images/" + data.imageName} alt="Image placeholder" className="img-fluid" /></a>
-                        </figure>
-                        <div className="text text-center">
-                          <h3 className="heading"><a href="">{data.title}</a></h3>
-                          <p style={{textAlign:'justify'}}>{(data.content).substring(0,110) + '...'}</p>
-                          <p><a href="" onClick = {(e)=>{ handleDialogeOpen(index)}} data-toggle="modal" data-target="#exampleModalLong">Read More</a></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>  
-                )
-              })}
-                            
-            </div> */}
+           
           </div>  
         </div>
       </div>
