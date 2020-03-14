@@ -34,7 +34,7 @@ export default function Direction (){
         return(
               <div>
                      <Header />
-                     <div className="container-fluid" style={{padding: '0px!important'}}>
+                     <div className="" style={{padding: '0px!important'}}>
   <img src="images/D.jpg" alt="" className="img-responsive" style={{width: '100%', height: '350px'}} />
 </div>
           <section class="site-section">

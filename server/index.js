@@ -22,9 +22,9 @@ if (env === 'dev' || env === 'uat' || env === 'prod') {
 }
 
 const mainRoute = require('./routes/mainRoute');
-const appointmentRouter = require('./routes/appointment');
+const appRouting = require('./routes/appRouting');
 
-app.use('/api/appointment', appointmentRouter);
+app.use('/api', appRouting);
 app.use('/',mainRoute);
 
 let port ='';

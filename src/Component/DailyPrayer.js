@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState,useEffect } from 'react';
 import Header from './SubComponent/Header.js';
 import Footer from './SubComponent/Footer.js';
 import FullContentViewDialog from './SubComponent/FullContentViewDialog';
@@ -9,7 +9,8 @@ import MomentUtils from '@date-io/moment';
 import DateFnsUtils from '@date-io/date-fns';
 import LuxonUtils from '@date-io/luxon';
 import { makeStyles } from '@material-ui/core/styles';
-
+import FetchAPI from '../api/APIs';
+import {getDate} from '../lib/datetime.js';
 
 const useStyles = makeStyles({
   root: {
@@ -27,46 +28,72 @@ const useStyles = makeStyles({
 // pick a date util library
 
 //import MuiPickersUtilsProvider from 'MuiPickersUtilsProvider';
-let contentArray = [
-  {content : "Me And My Family Are In Bliss Today.We Are Together And Happy,We Are In Complete Gratitude Thank You Divine ,Thank You Universe ,Thank You Divine.",image:"image_tall_1.jpg"},
-  {content : "My Lord,My Power Envelope Me And My Family In Golden Ball Of Divine Light Of Complete Protection.Thank You My Lord ,Thank You My Power.",image:"image_tall_2.jpg"},
-  {content : "I Receive Showers And Showers Of Happiness And Bliss Now.I Am Blessed And Filled With Blessings Today.Thank You Universe ,Thank You Divine Thank You Universe.",image:"image_tall_3.jpg"},
-  {content : "I Ask For Divine Wisdom My Lord So That I Live Each Moment With Deep Consciousness.Thank You Divine Thank You Universe,Thank You Divine",image:"image_tall_1.jpg"},
-];
-let Arr = [
-  {content: "I Am Blessed Today ,I Am Ready For A Miracle Today I Am In Receiving Mode Today Because I Am Sowing Consciously Conscientiously And Carefully.Thank You My Lord,Thank You My Divine,Thank You My Lord.",imageName:"image_tall_1.jpg"},
-  {content: "Mangal Hi Mangal Hum Sab Ka Mangal Kar Do Ji Dukh Takleef Kasht Intezaar Losses Sab Har Lo Ji Shukrana Shukrana Shukrana Meray Malik.",imageName:"image_tall_2.jpg"},
-  {content: "Me And My Family Are Blessed We Are Healthy,We Are In Bliss.We Are Financial Magnets.Thank You My Lord,Thank You My Divine,Thank You My Lord.",imageName:"image_tall_3.jpg"},
-  {content: "My Lord Fill Me With Positivity And Complete Well Being.Thank You My Lord Thank You My Lord ,Thank You My Lord.",imageName:"image_tall_1.jpg"},
-  {content: "I Am Blessed Today ,I Am Ready For A Miracle Today I Am In Receiving Mode Today Because I Am Sowing Consciously Conscientiously And Carefully.Thank You My Lord,Thank You My Divine,Thank You My Lord.",imageName:"image_tall_2.jpg"},
-  {content: "I Ask For Divine Wisdom My Lord So That I Live Each Moment With Deep Consciousness.Thank You Divine Thank You Universe,Thank You Divine.",imageName:"image_tall_3.jpg"},
-];
+// let contentArray = [
+//   {content : "Me And My Family Are In Bliss Today.We Are Together And Happy,We Are In Complete Gratitude Thank You Divine ,Thank You Universe ,Thank You Divine.",image:"image_tall_1.jpg"},
+//   {content : "My Lord,My Power Envelope Me And My Family In Golden Ball Of Divine Light Of Complete Protection.Thank You My Lord ,Thank You My Power.",image:"image_tall_2.jpg"},
+//   {content : "I Receive Showers And Showers Of Happiness And Bliss Now.I Am Blessed And Filled With Blessings Today.Thank You Universe ,Thank You Divine Thank You Universe.",image:"image_tall_3.jpg"},
+//   {content : "I Ask For Divine Wisdom My Lord So That I Live Each Moment With Deep Consciousness.Thank You Divine Thank You Universe,Thank You Divine",image:"image_tall_1.jpg"},
+// ];
+// let Arr = [
+//   {content: "I Am Blessed Today ,I Am Ready For A Miracle Today I Am In Receiving Mode Today Because I Am Sowing Consciously Conscientiously And Carefully.Thank You My Lord,Thank You My Divine,Thank You My Lord.",imageName:"image_tall_1.jpg"},
+//   {content: "Mangal Hi Mangal Hum Sab Ka Mangal Kar Do Ji Dukh Takleef Kasht Intezaar Losses Sab Har Lo Ji Shukrana Shukrana Shukrana Meray Malik.",imageName:"image_tall_2.jpg"},
+//   {content: "Me And My Family Are Blessed We Are Healthy,We Are In Bliss.We Are Financial Magnets.Thank You My Lord,Thank You My Divine,Thank You My Lord.",imageName:"image_tall_3.jpg"},
+//   {content: "My Lord Fill Me With Positivity And Complete Well Being.Thank You My Lord Thank You My Lord ,Thank You My Lord.",imageName:"image_tall_1.jpg"},
+//   {content: "I Am Blessed Today ,I Am Ready For A Miracle Today I Am In Receiving Mode Today Because I Am Sowing Consciously Conscientiously And Carefully.Thank You My Lord,Thank You My Divine,Thank You My Lord.",imageName:"image_tall_2.jpg"},
+//   {content: "I Ask For Divine Wisdom My Lord So That I Live Each Moment With Deep Consciousness.Thank You Divine Thank You Universe,Thank You Divine.",imageName:"image_tall_3.jpg"},
+// ];
 export default function DailyPrayer() {
   const classes = useStyles();
     // let aboutKey = 1;
     const [showContentDialog, setShowContentDialog] = useState(false);
-    const [dialogContent, setDialogContent]  = useState(false);
-    
-    const handleDialogeOpen = (objectIndex) => {
-     setDialogContent(contentArray[objectIndex].content);
-     setShowContentDialog(true);
-    }
+    const [dialogContent, setDialogContent]  = useState(false);    
     const [aboutKey, setAboutKey] = useState(1);
-
-    const [date, setDate] = useState(new Date);
+    const [prayerList, setprayerList] = useState([]);
+    const [date, setDate] = useState(new Date());
 
     const handleDate = (date) => {
-      setDate(date)
+      setDate(date);
+      fetchprayer(date);
     }
-    // const handleChange = (value) => {
-    //   console.log(value);
-    //   setAboutKey(value);
-    // }
+ 
 
+   
+   const handleDialogeOpen = (objectIndex) => {
+    setDialogContent(prayerList[objectIndex].prayer);
+    setShowContentDialog(true);
+   }
+  
+   
+    const fetchprayer = async (date) => {
+      try{
+        const result = await FetchAPI.getprayersList({date: getDate(date)});
+        setprayerList(result.result);
+        console.log(result);
+      }catch(e){
+        console.log('Error...',e);
+      }
+    }
+   
+    useEffect(() => {
+      fetchprayer(new Date());
+     },[]);
+   
+    const handleActiveDeactive = async (data) => {
+      console.log('handleActiveDeactive',data)
+      try{
+        const result = await FetchAPI.changeState({date: 'date'});
+        setprayerList(result.resultList);
+         //console.log('date',date)
+      }catch(e){
+        console.log('Error...',e);
+      }
+    }
+
+     
       return(
         <div className="wrap">        
           <Header />
-          <div className="container-fluid" style={{padding: '0px!important'}}>
+          <div className="" style={{padding: '0px!important'}}>
   <img src="images/GC/P.jpg" alt="" className="img-responsive" style={{width: '100%', height: '350px'}} />
 </div>
     
@@ -122,15 +149,15 @@ export default function DailyPrayer() {
                 <div class="section-heading">
                    <h2 class="heading">Latest Prayer's</h2>
                 </div>
-                { contentArray.map((data, index) => {
-                        return(
-<div class="block-44 d-flex mb-3">
-<div class="block-44-image"><img src={"images/" + contentArray[index].image }alt="Image placeholder"/></div>
-<div class="block-44-text">
-<h3 class="block-44-heading" style={{color:'#6c5b7b',textAlign:'justify',fontSize:'18px',lineHeight:'25px'}}><a>{(data.content).substring(0,110) + '...'}</a></h3>
-<div class="block-44-meta">Posted on June 28, 2018</div>
-<p><a href="" onClick = {(e)=>{ handleDialogeOpen(index)}} data-toggle="modal" data-target="#exampleModalLong">Read More</a></p>
-</div>
+                { prayerList.map((data, index) => {
+                          return(
+  <div class="block-44 d-flex mb-3">
+  <div class="block-44-image"><img src={"images/image_tall_1.jpg" }alt="Image placeholder"/></div>
+  <div class="block-44-text">
+  <h3 class="block-44-heading" style={{color:'#6c5b7b',textAlign:'justify',fontSize:'18px',lineHeight:'25px'}}><a>{(data.prayer).substring(0,110) + '...'}</a></h3>
+  <div class="block-44-meta">{"Posted on " + data.created_at}</div>
+  <p><a href="" onClick = {(e)=>{ handleDialogeOpen(index)}} data-toggle="modal" data-target="#exampleModalLong">Read More</a></p>
+  </div>
 </div>
                         )
                 })
@@ -143,13 +170,13 @@ export default function DailyPrayer() {
 <div class="section-heading">
 <h2 class="heading">Popular Prayer's</h2>
 </div>
-{ Arr.map((data, index) => {
+{ prayerList.map((data, index) => {
                         return(
 <div class="block-44 d-flex mb-3">
-<div class="block-44-image"><img src={"images/" + Arr[index].imageName }alt="Image placeholder"/></div>
+<div class="block-44-image"><img src={"images/image_tall_1.jpg" }alt="Image placeholder"/></div>
 <div class="block-44-text">
-<h3 class="block-44-heading"style={{color:'#6c5b7b',textAlign:'justify',fontSize:'18px',lineHeight:'25px'}}><a>{(data.content).substring(0,110) + '...'}</a></h3>
-<div class="block-44-meta">Posted on June 28, 2018</div>
+<h3 class="block-44-heading"style={{color:'#6c5b7b',textAlign:'justify',fontSize:'18px',lineHeight:'25px'}}><a>{(data.prayer).substring(0,110) + '...'}</a></h3>
+<div class="block-44-meta">{"Posted on " + data.created_at}</div>
 <p><a href="" onClick = {(e)=>{ handleDialogeOpen(index)}} data-toggle="modal" data-target="#exampleModalLong">Read More</a></p>
 </div>
 </div>

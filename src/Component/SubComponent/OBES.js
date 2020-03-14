@@ -17,7 +17,7 @@ export default function OBES()  {
     return(
       <div>
         <Header/>
-        <div className="container-fluid" style={{padding: '0px!important'}}>
+        <div className="" style={{padding: '0px!important'}}>
   <img src="images/obe.jpg" alt="" className="img-responsive" style={{width: '100%', height: '350px'}} />
 </div>
           <center>
