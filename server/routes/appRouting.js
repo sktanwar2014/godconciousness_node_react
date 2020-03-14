@@ -5,7 +5,4 @@ const Routing = express.Router();
 
 Routing.route("/getprayersList").post(AppController.getprayersList);
 
-
-
-
 module.exports = Routing;
