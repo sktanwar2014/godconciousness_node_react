@@ -25,5 +25,19 @@ export default {
     }
   },
 
+  sendMail:async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/sendMail`;
+    try {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'POST' }), {
+        data: payload,
+      }),
+    );
+      return data;
+    } catch (error) {      
+      //checkError(error);
+      throw error;
+    }
+  },
+
 }; 
 
