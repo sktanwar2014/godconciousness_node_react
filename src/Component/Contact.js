@@ -1,10 +1,22 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Header from './SubComponent/Header.js';
 import Footer from './SubComponent/Footer.js';
 import APIs from '../api/APIs.js'
+export default function Contact() {
+  const [contact, setContact] = useState({});
+  useEffect(() => {
+    getContactInfo();
+  },[]);
+  
+  const getContactInfo = async() => {
+    try{
+      const result = await APIs.getContactInfo({});
+      setContact(result.result[0]);      
+    }catch(e){
+      console.log("error...",e);
+    }
+  }
 
-export default class Contact extends Component {
-  render() {
     const handleSendMail = async (e) => {
       e.preventDefault();
       try{
@@ -69,9 +81,9 @@ export default class Contact extends Component {
                          <div class="block-23">
                               <h3 class="heading mb-5">Contact Information</h3>
                                     <ul>
-                                      <li><span class="icon ion-android-pin"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                                      <li><a href="#"><span class="icon ion-ios-telephone"></span><span class="text">+2 392 3929 210</span></a></li>
-                                      <li><a href="#"><span class="icon ion-android-mail"></span><span class="text">info@yourdomain.com</span></a></li>
+                                      <li><span class="icon ion-android-pin"></span><span class="text"> {contact.address} </span></li>
+      <li><a href="#"><span class="icon ion-ios-telephone"></span><span class="text">{contact.mobile}</span></a></li>
+      <li><a href="#"><span class="icon ion-android-mail"></span><span class="text">{contact.email}</span></a></li>
                                     </ul>
                                         </div>
                                        </div>
@@ -82,12 +94,12 @@ export default class Contact extends Component {
         <section className="footer-bottom" id="contact" style={{backgroundColor: '#C5E4E7'}}>
           <div className="address_mail_footer_grids">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.5555388050793!2d144.7516093153163!3d-37.73010927976772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6f50fa340f24b%3A0x4011fcd161b135c9!2s53%20Inglewood%20Dr%2C%20Burnside%20Heights%20VIC%203023%2C%20Australia!5e0!3m2!1sen!2sin!4v1576227983267!5m2!1sen!2sin"  style={{width:'100%',height:'500px'}} />
+          
           </div>
         </section>
 
             <Footer />            
           </div>  
     )
-  }
 }  
          

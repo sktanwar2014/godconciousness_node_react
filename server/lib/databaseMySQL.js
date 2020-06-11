@@ -1,15 +1,15 @@
 const env = 'local';
 
-let DbName = 'sargatech_godconsciousness';
+let DbName = 'a1abilities';
 let domainName = 'newgc.sargatechnology.com';
 
 console.log('env...', env);
 
 if (env === 'prod') {
-  DbName = 'sargatech_godconsciousness';
+  DbName = 'a1abilities';
   domainName = 'newgc.sargatechnology.com';
 } else {  
-  DbName = 'godconsciousness'
+  DbName = 'a1abilities'
   domainName = 'localhost:5000'
 }
 

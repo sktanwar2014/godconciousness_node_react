@@ -1,18 +1,31 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect} from 'react';
 import Header from './SubComponent/Header.js';
 import Footer from './SubComponent/Footer.js';
 import Introduction from './SubComponent/Introduction.js';
 import AboutDimpleAnil from './SubComponent/AboutDimpleAnil.js';
-
+import APIs from '../api/APIs.js'
 
 
 export default function About() {
-    // let aboutKey = 1;
+  const [About, setAbout] = useState({});
+  useEffect(() => {
+    getAbout();
+  },[]);
+  
+  const getAbout = async() => {
+    try{
+      const result = await APIs.getAbout({});
+      setAbout(result.result[0]);  
+       
+    }catch(e){
+      console.log("error...",e);
+    }
+  }
+  
+
+
     const [aboutKey, setAboutKey] = useState(1);
-    // const handleChange = (value) => {
-    //   console.log(value);
-    //   setAboutKey(value);
-    // }
+    
 
       return(
         <div className="wrap">        

@@ -11,6 +11,34 @@ const PARAMS = ({ methodType = 'GET' }) => ({
 
 export default {
 
+  getContactInfo:async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/getContactInfo`;
+    try {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'GET' }), {
+        data: payload,
+      }),
+    );
+      return data;
+    } catch (error) {
+      //checkError(error);
+      throw error;
+    }
+  },
+
+  getAboutInfo:async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/getAboutInfo`;
+    try {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'GET' }), {
+        data: payload,
+      }),
+    );
+      return data;
+    } catch (error) {
+      //checkError(error);
+      throw error;
+    }
+  },
+
  getprayersList:async ({...payload }) => {
     const URL = `${c.API_CONSUMER}/api/getprayersList`;
     try {
