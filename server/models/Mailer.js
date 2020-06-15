@@ -18,7 +18,7 @@ const Mailer = function (params) {
       let formInfo = `<div><p>Name:  ${that.name}</p><p>Phone: ${that.phone}</p><p>Email: ${that.email}</p><p>Message: ${that.message}</p></div>`;
       const mail = {
         from: 'sktanwar.2020@gmail.com',   
-        to: 'aj9930061@gmail.com',
+        to: 'kamlesh.gehlott@gmail.com',
         cc: 'ashutoshvyas78@outlook.com',
         subject: 'Your Website: ' + that.name + ' send you something..',      
         html: formInfo

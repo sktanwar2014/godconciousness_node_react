@@ -25,6 +25,24 @@ export default {
     }
   },
 
+  getTabRelatedList:async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/getTabRelatedList`;
+    try {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'POST' }), 
+     
+      {
+        data: payload,
+      }),
+    ); 
+      return data;
+    } catch (error) {
+      checkError(error);
+      throw error;
+    }
+  },
+
+
+
   getAboutInfo:async ({...payload }) => {
     const URL = `${c.API_CONSUMER}/api/getAboutInfo`;
     try {

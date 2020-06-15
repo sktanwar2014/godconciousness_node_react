@@ -2,7 +2,16 @@ const AppModel = require('../models/AppModels.js');
 const Mailer = require('../models/Mailer.js');
 
 
-
+const getTabRelatedList = async function (req, res, next) {
+    try {
+        console.log(req.body)
+        const result = await new AppModel({type: req.body.type}).getTabRelatedList();
+        console.log(result)
+        res.send({ resultList: result });
+    } catch (err) {
+        next(err);
+    }
+}
 
 const getContactInfo = async function (req, res, next) {
     try {
@@ -52,4 +61,5 @@ module.exports = {
     sendMail : sendMail,
     getContactInfo : getContactInfo,
     getAbout:getAbout,
+    getTabRelatedList:getTabRelatedList,
 };
