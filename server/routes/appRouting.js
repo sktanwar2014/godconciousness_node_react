@@ -1,7 +1,18 @@
 const express = require('express')
 const AppController = require('../controllers/AppController.js');
+// const upload = multer({ storage: storage });
 
 const Routing = express.Router();
+
+// const storage = multer.diskStorage({    
+//     destination: function (req, file, callback) {
+//       callback(null, './files/images');
+//     },
+//     filename: function (req, file, callback) {
+//       callback(null, file.originalname.split('.')[0] + "_" + Date.now() + '.' + file.originalname.split('.')[1]);
+//     }
+//   });
+  
 
 
 Routing.route("/getContactInfo").get(AppController.getContactInfo);

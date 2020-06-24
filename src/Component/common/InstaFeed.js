@@ -18,25 +18,8 @@ const fetchInstagramPhotos = async (accountUrl) => {
 }
 
 export default (async () => {
-  try {
-    const photos = await fetchInstagramPhotos('https://www.instagram.com/sunsetwithbubbles/')
-    const container = document.getElementById('instagram-photos')
-    photos.forEach(el => {
-      const a = document.createElement('a')
-      const img = document.createElement('img')
+ 
 
-      a.setAttribute('href', el.url)
-      a.setAttribute('target', '_blank')
-      a.setAttribute('rel', 'noopener noreferrer')
-      a.classList.add('instagram-photo')
-
-      img.setAttribute('src', el.thumbnailUrl)
-      img.setAttribute('alt', el.caption)
-      
-      a.appendChild(img)
-      container.appendChild(a)
-    })
-  } catch (e) {
-    console.error('Fetching Instagram photos failed', e)
-  }
+  <div class="fb-login-button" data-size="medium" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
 })()
+

@@ -38,7 +38,8 @@ const AppModel = function (params) {
        connection.changeUser({database : dbName});
        connection.query('SELECT * FROM  contact', function (error, rows, fields) { 
          if (error) {  console.log("Error...", error); reject(error); }          
-         resolve(rows);              
+         resolve(rows);  
+                     
        });
          connection.release();
          console.log('Process Complete %d', connection.threadId);

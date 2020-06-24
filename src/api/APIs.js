@@ -16,11 +16,13 @@ export default {
     try {
       const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'GET' }), {
         data: payload,
+        
       }),
     );
+    //console.log(data);
       return data;
     } catch (error) {
-      //checkError(error);
+      checkError(error);
       throw error;
     }
   },

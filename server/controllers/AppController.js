@@ -18,7 +18,7 @@ const getContactInfo = async function (req, res, next) {
         const newActivity = new AppModel({});
         const result = await newActivity.getContactInfo();
         res.send({ result});    
-        console.log(result)          
+                  
     } catch (err) {
         
         next(err);

@@ -1,13 +1,13 @@
 const env = 'local';
 
 let DbName = 'a1abilities';
-let domainName = 'newgc.sargatechnology.com';
+let domainName = 'http://newgc.a1abilities.co.nz/';
 
 console.log('env...', env);
 
 if (env === 'prod') {
   DbName = 'a1abilities';
-  domainName = 'newgc.sargatechnology.com';
+  domainName = 'http://newgc.a1abilities.co.nz/';
 } else {  
   DbName = 'a1abilities'
   domainName = 'localhost:5000'

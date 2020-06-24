@@ -1,13 +1,29 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component,Fragment, useEffect, useState  } from 'react';
+
+import FetchAPI from '../../api/APIs.js'
+
+
+export default function DailyPrayerBar(props){
+
+  const [Prayers, setPrayers] = useState([]);
+  
+  const fetchPrayers = async () => {
+    try{    
+      const result = await FetchAPI.getTabRelatedList({type: 'Prayers'});
+      setPrayers(result.resultList);
+      
+    }catch(e){
+      console.log('Error...',e);
+    }
+  }
+
+  useEffect(() => {
+   fetchPrayers();
+  },[]);
 
 
 
-export default class DailyPrayerBar extends Component {
-    playAudio() {
-        const audioEl = document.getElementsByClassName("audio-element")[0]
-        audioEl.play()
-      }
-    render() {
+
         return(
             <Fragment>
                 <section class="block-42 overlap">
@@ -16,15 +32,23 @@ export default class DailyPrayerBar extends Component {
                         <div class="col-md-12 d-lg-flex">              
                             <div class="block-42-text">
                                 <div class="block-42-label" style={{paddingRight:'10px'}}>Today Prayer's:</div>
-                                <div class="heading mb-4"><a href="#"><p style={{fontSize:'12px', fontWeight:'bold'}}>I Ask You My Divine To Guide Me At Each Step.I Ask You My Lord To Help Me Live Each Moment With Complete Consciousness.Thank You My Lord ,Thank You My Divine.</p></a></div>
+                                {(Prayers.length > 0 ? Prayers : []).map((data) => {
+                                return(
                                 
+                                <div class="heading mb-4"><a href="#"><p style={{fontSize:'12px', fontWeight:'bold'}}>
+                                    {data.content}
+                                    </p>
+                                    </a>
+                                    </div>
+                                )
+                            })}  
                             </div>
                           
                         </div>
                         </div>
                         <div class="block-42-icons ml-auto text-center">
-                                <a href="#" class="fa fa-video-camera pl-0"></a>
-                                <a href="#"  className="fa fa-headphones"></a>
+                                {/* <a href="#" class="fa fa-video-camera pl-0"></a> */}
+                                {/* <a href="#"  className="fa fa-headphones"></a> */}
                                 
                                    {/* <span onClick={this.playAudio} className="fa fa-headphones"></span>
                                            */}
@@ -37,8 +61,8 @@ export default class DailyPrayerBar extends Component {
                               }
                             </audio>  */}
                        
-                                <a href="#" class="fa fa-cloud-download"></a>
-                                <a href="#" class="fa fa-book"></a>
+                                {/* <a href="#" class="fa fa-cloud-download"></a> */}
+                                {/* <a href="#" class="fa fa-book"></a> */}
                             </div>
                             
                     </div>
@@ -46,4 +70,3 @@ export default class DailyPrayerBar extends Component {
             </Fragment> 
         )
     }
-}
