@@ -5,12 +5,13 @@ import FetchAPI from '../../api/APIs.js'
 
 export default function DailyPrayerBar(props){
 
-  const [Prayers, setPrayers] = useState([]);
+  const [prayers, setPrayers] = useState([]);
   
   const fetchPrayers = async () => {
     try{    
       const result = await FetchAPI.getTabRelatedList({type: 'Prayers'});
       setPrayers(result.resultList);
+     
       
     }catch(e){
       console.log('Error...',e);
@@ -32,16 +33,18 @@ export default function DailyPrayerBar(props){
                         <div class="col-md-12 d-lg-flex">              
                             <div class="block-42-text">
                                 <div class="block-42-label" style={{paddingRight:'10px'}}>Today Prayer's:</div>
-                                {(Prayers.length > 0 ? Prayers : []).map((data) => {
-                                return(
+                                { prayers.map((data) => {
+                          return(
+                        
                                 
-                                <div class="heading mb-4"><a href="#"><p style={{fontSize:'12px', fontWeight:'bold'}}>
-                                    {data.content}
-                                    </p>
-                                    </a>
-                                    </div>
-                                )
-                            })}  
+                                <div class="heading mb-4">
+                                {data.title}
+                                    
+                                    </div> 
+                                   
+                                   )
+                                  })
+                                }
                             </div>
                           
                         </div>

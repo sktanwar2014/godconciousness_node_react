@@ -25,7 +25,25 @@ const AppModel = function (params) {
     });
   } 
 
-
+  AppModel.prototype.getPrayerList = function () {
+    const that = this;
+     return new Promise(function (resolve, reject) {
+       connection.getConnection(function (error, connection) {
+         if (error) {
+           throw error;
+         }
+   
+         connection.changeUser({database : dbName}); 
+         let Query = `SELECT title, content, date FROM website_content WHERE type = 'Prayers' AND date = '${that.date}';`;
+         connection.query(Query, function (error, rows, fields) { 
+           if (error) {  console.log("Error...", error); reject(error);  }          
+           resolve(rows);              
+         });
+           connection.release();
+           console.log('Process Complete %d', connection.threadId);
+       });
+     });
+   } 
 
  AppModel.prototype.getContactInfo = function () {
   const that = this;

@@ -2726,6 +2726,7 @@ blockquote p {
 
 .block-42 .block-42-text > div {
   display: inline-block;
+  margin-right: 60px;
 }
 
 .block-42 .block-42-text .block-42-label {

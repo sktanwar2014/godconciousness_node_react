@@ -44,7 +44,7 @@ export default function Events(props){
             return(
               <div className="col-md-6 mb-5">
               <div class="block-44 d-flex mb-3">
-                <div class="block-44-image"><img src="images/image_tall_4_large.jpg" alt="Image placeholder" /></div>
+                <div class="block-44-image"><img src={"http://localhost:5001/api/images?path=images/" + data.image_name} alt="Image placeholder" /></div>
                 <div class="block-44-text">
                   <h3 class="block-44-heading"><a href="#"> {data.title} </a></h3>
                   <div class="block-44-meta mb-2">{data.event_date}</div>

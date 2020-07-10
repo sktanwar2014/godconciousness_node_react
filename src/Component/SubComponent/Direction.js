@@ -34,8 +34,14 @@ export default function Direction(props){
               <div>
                      <Header />
                      <div className="" style={{padding: '0px!important'}}>
-  <img src="images/D.jpg" alt="" className="img-responsive" style={{width: '100%', height: '350px'}} />
-</div>
+                     {Direction.map((data, index) => {
+                return(
+  <img src="images/D.jpg"   alt="" className="img-responsive" style={{width: '100%', height: '350px'}} />
+  )
+})}
+  </div>
+
+
           <section class="site-section">
             <div class="container">
               <div class="row">
@@ -46,7 +52,7 @@ export default function Direction(props){
                 <div class="block-20">
                   <figure style={{width: '100%;'}}>
                     <a href="blog-single.html">
-                    <img src={"images/" + data.imageName} alt="Image placeholder" className="img-fluid" />
+                    <img src={"http://localhost:5001/api/images?path=images/" + data.image_name} alt="Image placeholder" className="img-fluid" />
                     </a>
                   </figure>
                   <div className="text text-center">

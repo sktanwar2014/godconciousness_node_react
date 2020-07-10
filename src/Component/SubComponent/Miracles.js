@@ -60,8 +60,8 @@ export default function Miracle(props){
                         <div class="col-md-6 col-lg-4 mb-5">
                           <div class="block-20">
                             <figure style={{width: '100%'}}>
-                              <a href="blog-single.html">
-                                <img src={"images/" + data.imageName} alt="Image placeholder" class="img-fluid"/>
+                              <a href="#">
+                                <img src={"http://localhost:5001/api/images?path=images/" + data.image_name}  alt="Image placeholder" class="img-fluid"/>
                               </a>
                             </figure>
                           <div class="text text-center">

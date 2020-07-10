@@ -35,6 +35,16 @@ const getAbout = async function (req, res, next) {
     }
 }
 
+const getPrayerList = async function (req, res, next) {
+    try {
+        const newActivity = new AppModel({date: req.body.date});
+        const result = await newActivity.getPrayerList();
+        res.send({ prayerList: result});              
+    } catch (err) {
+        next(err);
+    }
+}
+
 const sendMail = async function (req, res, next) {
     let params = {
         name: req.body.name,
@@ -57,7 +67,7 @@ const sendMail = async function (req, res, next) {
 
 
 module.exports = {    
-    // getprayersList : getprayersList,
+    getPrayerList : getPrayerList,
     sendMail : sendMail,
     getContactInfo : getContactInfo,
     getAbout:getAbout,
