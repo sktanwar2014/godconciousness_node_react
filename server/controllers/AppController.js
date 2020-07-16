@@ -2,6 +2,50 @@ const AppModel = require('../models/AppModels.js');
 const Mailer = require('../models/Mailer.js');
 
 
+const fetchBannerImage = async function (req, res, next) {
+    try {
+        const result = await new AppModel({type: req.body.type}).fetchBannerImage();
+        if(result){
+            res.send(result[0]);
+        }else{
+            res.send({id: '', image_name: ''});
+        }
+    } catch (err) {
+        next(err);
+    }
+}
+
+
+const fetchHeaderFooterContent = async function (req, res, next) {
+    try {
+        const result = await new AppModel({}).fetchHeaderFooterContent();
+        res.send(result);
+    } catch (err) {
+        next(err);
+    }
+}
+
+
+const fetchHomePageData = async function (req, res, next) {
+    try {
+        const result = await new AppModel({}).fetchHomePageData();
+        res.send(result);
+    } catch (err) {
+        next(err);
+    }
+}
+
+
+const fetchAboutPageData = async function (req, res, next) {
+    try {
+        const result = await new AppModel({}).fetchAboutPageData();
+        res.send(result);
+    } catch (err) {
+        next(err);
+    }
+}
+
+
 const getTabRelatedList = async function (req, res, next) {
     try {
         console.log(req.body)
@@ -66,10 +110,14 @@ const sendMail = async function (req, res, next) {
 }
 
 
-module.exports = {    
-    getPrayerList : getPrayerList,
-    sendMail : sendMail,
-    getContactInfo : getContactInfo,
-    getAbout:getAbout,
-    getTabRelatedList:getTabRelatedList,
+module.exports = {  
+    fetchBannerImage: fetchBannerImage, 
+    fetchHeaderFooterContent: fetchHeaderFooterContent,
+    fetchHomePageData: fetchHomePageData,
+    fetchAboutPageData: fetchAboutPageData,
+    // getPrayerList : getPrayerList,
+    // sendMail : sendMail,
+    // getContactInfo : getContactInfo,
+    // getAbout:getAbout,
+    // getTabRelatedList:getTabRelatedList,
 };

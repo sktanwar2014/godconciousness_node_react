@@ -3,7 +3,6 @@ import React, { Component,Fragment } from 'react';
 
 export default class Insta extends Component {
     render()
-  
     {
      
         return(

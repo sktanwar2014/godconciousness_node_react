@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function PageLoader() {
+export default function FallbackLoader() {
   return (
     <div id="loader" class="show fullscreen">
       <svg class="circular" width="48px" height="48px">

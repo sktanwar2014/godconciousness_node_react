@@ -11,6 +11,62 @@ const PARAMS = ({ methodType = 'GET' }) => ({
 
 export default {
 
+  fetchBannerImage: async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/fetchBannerImage`;
+    try {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'POST' }), {
+        data: payload,        
+      }),
+    );
+      return data;
+    } catch (error) {
+      checkError(error);
+      throw error;
+    }
+  },
+
+  fetchHeaderFooterContent: async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/fetchHeaderFooterContent`;
+    try {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'GET' }), {
+        data: payload,        
+      }),
+    );
+      return data;
+    } catch (error) {
+      checkError(error);
+      throw error;
+    }
+  },
+
+  fetchHomePageData: async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/fetchHomePageData`;
+    try {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'GET' }), {
+        data: payload,        
+      }),
+    );
+      return data;
+    } catch (error) {
+      checkError(error);
+      throw error;
+    }
+  },
+  
+  fetchAboutPageData: async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/fetchAboutPageData`;
+    try {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'GET' }), {
+        data: payload,        
+      }),
+    );
+      return data;
+    } catch (error) {
+      checkError(error);
+      throw error;
+    }
+  },
+
   getContactInfo:async ({...payload }) => {
     const URL = `${c.API_CONSUMER}/api/getContactInfo`;
     try {
