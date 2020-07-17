@@ -6,19 +6,19 @@ import APIs from '../api/APIs.js'
 
 export default function Contact() {
   const [contact, setContact] = useState({});
-  useEffect(() => {
-    getContactInfo();
-  },[]);
+  // useEffect(() => {
+  //   getContactInfo();
+  // },[]);
   
-  const getContactInfo = async() => {
-    try{
-      const result = await APIs.getContactInfo({});
-      setContact(result.result[0]);  
+  // const getContactInfo = async() => {
+  //   try{
+  //     const result = await APIs.getContactInfo({});
+  //     setContact(result.result[0]);  
         
-    }catch(e){
-      console.log("error...",e);
-    }
-  }
+  //   }catch(e){
+  //     console.log("error...",e);
+  //   }
+  // }
 
     const handleSendMail = async (e) => {
       e.preventDefault();

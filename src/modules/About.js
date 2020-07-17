@@ -11,12 +11,12 @@ export default function About(props) {
   const [about, setAbout] = useState({id:'', content: '', image_name: '', link: ''});
 
   useEffect(() => {
-    fetchAboutPageData();
+    fetchPageData();
   },[]);
 
-  const fetchAboutPageData = async () => {
+  const fetchPageData = async () => {
     try{
-      const result = await FetchAPI.fetchAboutPageData({}); 
+      const result = await FetchAPI.fetchPageData({page: 'About'});
       setAbout(result.about[0]);
     }catch(e){
       console.log('Error...', e);

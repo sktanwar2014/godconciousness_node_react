@@ -31,12 +31,12 @@ export default function Home(props) {
   const [prayer, setPrayer] = useState({id:'', title: '', content: '', image_name: '', link: ''});
 
   useEffect(() => {
-    fetchHomePageData();
+    fetchPageData();
   },[]);
 
-  const fetchHomePageData = async () => {
+  const fetchPageData = async () => {
     try{
-      const result = await FetchAPI.fetchHomePageData({}); 
+      const result = await FetchAPI.fetchPageData({page: 'Home'}); 
       setAbout(result.about[0]);
       setMiracles(result.miracles);
       setEvents(result.events);

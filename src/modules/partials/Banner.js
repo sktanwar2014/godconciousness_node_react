@@ -7,7 +7,7 @@ import FetchAPI from '../../api/APIs.js';
 //Components
 import {FTP_URL} from '../../api/config/Constants.js';
 
-export default function Banner() {           
+export default function Banner() {
     
     const [imageURL, setImageURL] = useState(FTP_URL);
     let type = ''; 
@@ -16,6 +16,7 @@ export default function Banner() {
         switch((window.location.pathname).toString().toLowerCase()){
             case '/' : type = 'bannerHome'; break;
             case '/about' : type = 'bannerAbout'; break;
+            case '/contact' : type = 'bannerContact'; break;
             // case 'Miracle'       :   type: ; break;
             // case 'Direction'     :   type: ; break;
             // case 'OBE'           :   type: ; break;
@@ -42,7 +43,7 @@ export default function Banner() {
 
     return(
         <Fragment>
-            <section className="site-hero overlay" data-stellar-background-ratio='0.9'  style={{backgroundImage: `url(${imageURL})`}}>
+            <section className="site-hero overlay min-max-height" data-stellar-background-ratio='1'  style={{backgroundImage: `url(${imageURL})`}}>
                 <div class="container">
                     <div class="row align-items-center justify-content-center site-hero-inner">
                         <div class="col-md-8 text-center">

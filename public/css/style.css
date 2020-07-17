@@ -2658,3 +2658,8 @@ blockquote p {
 .color-white {
   color: white;
 }
+
+.min-max-height {
+  min-height: 250px;
+  max-height:   500px;
+}

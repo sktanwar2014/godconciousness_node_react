@@ -20,14 +20,14 @@ const Routing = express.Router();
 
 Routing.route("/fetchBannerImage").post(AppController.fetchBannerImage);
 Routing.route("/fetchHeaderFooterContent").get(AppController.fetchHeaderFooterContent);
-Routing.route("/fetchHomePageData").get(AppController.fetchHomePageData);
-Routing.route("/fetchAboutPageData").get(AppController.fetchAboutPageData);
+Routing.route("/fetchPageData").post(AppController.fetchPageData);
+Routing.route("/sendMail").post(AppController.sendMail);
 
 // Routing.route("/getContactInfo").get(AppController.getContactInfo);
 // Routing.route("/getAbout").get(AppController.getAbout);
 // Routing.route("/getTabRelatedList").post(AppController.getTabRelatedList);
 
 // Routing.route("/getPrayerList").post(AppController.getPrayerList);
-// Routing.route("/sendMail").post(AppController.sendMail);
+
 
 module.exports = Routing;

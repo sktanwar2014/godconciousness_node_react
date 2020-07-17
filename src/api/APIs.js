@@ -39,10 +39,10 @@ export default {
     }
   },
 
-  fetchHomePageData: async ({...payload }) => {
-    const URL = `${c.API_CONSUMER}/api/fetchHomePageData`;
+  fetchPageData: async ({...payload }) => {
+    const URL = `${c.API_CONSUMER}/api/fetchPageData`;
     try {
-      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'GET' }), {
+      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'POST' }), {
         data: payload,        
       }),
     );
@@ -53,19 +53,6 @@ export default {
     }
   },
   
-  fetchAboutPageData: async ({...payload }) => {
-    const URL = `${c.API_CONSUMER}/api/fetchAboutPageData`;
-    try {
-      const { data } = await axios(URL, Object.assign({}, PARAMS({ methodType: 'GET' }), {
-        data: payload,        
-      }),
-    );
-      return data;
-    } catch (error) {
-      checkError(error);
-      throw error;
-    }
-  },
 
   getContactInfo:async ({...payload }) => {
     const URL = `${c.API_CONSUMER}/api/getContactInfo`;

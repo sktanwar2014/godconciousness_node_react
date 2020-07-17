@@ -26,9 +26,9 @@ const fetchHeaderFooterContent = async function (req, res, next) {
 }
 
 
-const fetchHomePageData = async function (req, res, next) {
+const fetchPageData = async function (req, res, next) {
     try {
-        const result = await new AppModel({}).fetchHomePageData();
+        const result = await new AppModel({page: req.body.page}).fetchPageData();
         res.send(result);
     } catch (err) {
         next(err);
@@ -36,14 +36,27 @@ const fetchHomePageData = async function (req, res, next) {
 }
 
 
-const fetchAboutPageData = async function (req, res, next) {
+
+const sendMail = async function (req, res, next) {
+    let params = {
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        message: req.body.message,
+    }
     try {
-        const result = await new AppModel({}).fetchAboutPageData();
-        res.send(result);
+        const mailer = new Mailer(params);
+        const result = await mailer.sendMail();
+        if(result !== undefined){
+            res.send({sent : true});
+        }else{
+            res.send({sent : false});
+        }
     } catch (err) {
         next(err);
     }
 }
+
 
 
 const getTabRelatedList = async function (req, res, next) {
@@ -89,34 +102,14 @@ const getPrayerList = async function (req, res, next) {
     }
 }
 
-const sendMail = async function (req, res, next) {
-    let params = {
-        name: req.body.name,
-        phone: req.body.phone,
-        email: req.body.email,
-        message: req.body.message,
-    }
-    try {
-        const mailer = new Mailer(params);
-        const result = await mailer.sendMail();
-        if(result !== undefined){
-            res.send({sent : true});
-        }else{
-            res.send({sent : false});
-        }
-    } catch (err) {
-        next(err);
-    }
-}
-
 
 module.exports = {  
     fetchBannerImage: fetchBannerImage, 
     fetchHeaderFooterContent: fetchHeaderFooterContent,
-    fetchHomePageData: fetchHomePageData,
-    fetchAboutPageData: fetchAboutPageData,
-    // getPrayerList : getPrayerList,
-    // sendMail : sendMail,
+    fetchPageData: fetchPageData,
+    sendMail : sendMail,
+
+    // getPrayerList : getPrayerList,    
     // getContactInfo : getContactInfo,
     // getAbout:getAbout,
     // getTabRelatedList:getTabRelatedList,
