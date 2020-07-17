@@ -14,14 +14,15 @@ import Banner from './modules/partials/Banner.js';
 const Home = lazy(()=> import('./modules/Home.js'));
 const About = lazy(()=> import('./modules/About.js'));
 const Contact = lazy(()=> import('./modules/Contact.js'));
+const Miracle = lazy(()=> import('./modules/Miracle.js'));
+const Direction = lazy(()=> import('./modules/Direction.js'));
+const OBE = lazy(()=> import('./modules/OBE.js'));
+const Blog = lazy(()=> import('./modules/Blog.js'));
 
-const Miracle = lazy(()=> import('./Component/Miracle.js'));
-const Blog = lazy(()=> import('./Component/Blog.js'));
 const Introduction = lazy(()=> import('./Component/SubComponent/Introduction'));
 const AboutDimpleAnil = lazy(()=> import('./Component/SubComponent/AboutDimpleAnil'));
 const Dailyprayer = lazy(()=> import('./Component/DailyPrayer'));
-const Direction = lazy(()=> import('./Component/SubComponent/Direction'));
-const OBES = lazy(()=> import('./Component/SubComponent/OBES'));
+
 
 
 function App() {
@@ -53,16 +54,17 @@ function App() {
                 <Switch>
                   <Route exact path="/" render = { props => { return <Home {...props} /> }}  />
                   <Route path="/About" render = { props => { return <About {...props} /> }} /> 
-                  <Route path='/Contact' render = { props => { return <Contact {...props} /> }} />
-                  
+                  <Route path='/Contact' render = { props => { return <Contact {...props} /> }} />                  
                   <Route path='/Miracle' render = { props => { return <Miracle {...props} /> }} />
+                  <Route path="/Direction" render = { props => { return <Direction {...props} /> }} />
+                  <Route path="/Obe" render = { props => { return <OBE {...props} /> }} />
                   <Route path='/Blog' render = { props => { return <Blog {...props} /> }} />
                   
                   <Route path="/Introduction" render = { props => { return <Introduction {...props} /> }} />
                   <Route path="/AboutDimpleAnil" render = { props => { return <AboutDimpleAnil {...props} /> }} />          
                   <Route path="/DailyPrayer" render = { props => { return <Dailyprayer {...props} /> }} />
-                  <Route path="/Direction" render = { props => { return <Direction {...props} /> }} />
-                  <Route path="/Obes" render = { props => { return <OBES {...props} /> }} />
+                  
+                  
                 </Switch>
               </Suspense>
             </Router>

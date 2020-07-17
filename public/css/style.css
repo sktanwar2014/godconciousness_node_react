@@ -2663,3 +2663,14 @@ blockquote p {
   min-height: 250px;
   max-height:   500px;
 }
+
+.blockqoute-home {
+  border-color: #685877;
+  padding: 20px;
+  margin: 0px 100px;
+  font-weight: 500;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}

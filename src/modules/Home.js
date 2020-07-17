@@ -5,14 +5,6 @@ import React, {Fragment, useEffect, useState} from 'react';
 import FullContentViewDialog from './Components/FullContentViewDialog.js';
 import {getDateInDDMMYYYY} from '../lib/datetime.js';
 
-import DailyPrayerBar from '../Component/SubComponent/DailyPrayerBar.js';
-// import AboutGC from './SubComponent/AboutGC.js';
-import Miracles from '../Component/SubComponent/Miracles.js';
-import Events from '../Component/SubComponent/LatestEvent.js';
-// import LatestEvent from './SubComponent/LatestEvent.js';
-// import Insta from './SubComponent/Insta.js';
-// import Footer from './SubComponent/Footer.js';
-
 //API
 import FetchAPI from '../api/APIs.js';
 import { FTP_URL } from '../api/config/Constants.js';
@@ -68,9 +60,11 @@ export default function Home(props) {
             <div class="col-md-12 d-lg-flex">
                 
                 <div class="block-42-text">
-                  <div class="block-42-label">Today's Prayer:</div>
+                  <div class="block-42-label" style={{fontWeight: '400'}}>Today's Prayer:</div>
                   <div class="block-42-title mx-2"> 
-                    <strong> {prayer.content} </strong>
+                    <blockquote className="blockqoute-home">
+                      <p>{prayer.content}</p>
+                    </blockquote>
                   </div>
                   {/* <div class="block-42-meta">Posted on June 28, 2018, <strong>Pastor John Smith</strong> </div> */}
                 </div>
@@ -119,13 +113,13 @@ export default function Home(props) {
               </div>
             </div>
           </div>
-         <div class="row">
+         {/* <div class="row">
            {(miracles.length > 0 ? miracles: []).map((data, index) => {
              return(
               <div class="col-md-6 col-lg-4 mb-5">
                 <div class="block-20">
                   <figure>
-                    <a href="#"><img src={FTP_URL + '/api/images?path=Miracle/' + data.image_name}  class="img-fluid" /></a>
+                    <a href="#"><img src={FTP_URL + '/api/images?path=Miracle/' + data.image_name}  class="img-fluid"  /></a>
                   </figure>
                   <div class="text text-center">
                     <h3 class="heading"><a href="#">{data.title}</a></h3>
@@ -136,7 +130,47 @@ export default function Home(props) {
               </div>  
              )
            })}                
-        </div> 
+        </div>  */}
+      </div>
+      <div class="block-13">
+        <div class="nonloop-block-13 owl-carousel owl-loaded owl-drag">
+          <div class="owl-stage-outer">
+            <div class="owl-stage" style={{transform: 'translate3d(-363px, 0px, 0px)', transition: 'all 0.25s ease 0s', width: '2481px', paddingLeft: '150px', paddingRight: '150px'}}>
+              {(miracles.length > 0 ? miracles: []).map((data, index) => {
+                return(
+                  <div class={index === 0 ? "owl-item" : "owl-item" } style={{width: '343.5px', marginRight: '20px'}}>
+                    <div class="item">
+                      <div class="block-20">
+                        <figure>
+                          <a href="#">
+                            <img src = {FTP_URL + '/api/images?path=Miracle/' + data.image_name} alt="Image placeholder" class="img-fluid" />
+                          </a>
+                        </figure>
+                        <div class="text text-center">
+                          <h3 class="heading"><a href="#">{data.title}</a></h3>
+                          <p>{(data.content).substring(0,110) + '...'}</p>
+                          <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index, 'Miracle')}}>Read More</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )})}
+            </div>
+          </div>
+          <div class="owl-nav">
+            <button role="presentation" class="owl-prev">
+              <span class="ion-chevron-left"></span>
+            </button>
+            <button role="presentation" class="owl-next">
+              <span class="ion-chevron-right"></span>
+            </button>
+          </div>
+          <div class="owl-dots">
+            <button class="owl-dot active"><span></span></button>
+            <button class="owl-dot"><span></span></button>
+            <button class="owl-dot"><span></span></button>
+          </div>
+        </div>
       </div>
     </section>
     <section class="site-section">

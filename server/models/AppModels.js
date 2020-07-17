@@ -5,6 +5,7 @@ const AppModel = function (params) {
   this.date = params.date;  
   this.type = params.type;
   this.page = params.page;
+  this.pageNo = params.pageNo;
 };
 
 
@@ -60,6 +61,8 @@ AppModel.prototype.fetchPageData = function () {
         if (error) { throw error; }
   
         connection.changeUser({database : dbName});
+        let Query = ``;
+
         if(that.page === 'Home'){
           connection.query(`SELECT wc.id, wc.content, i.image_name, l.website_link as link FROM website_content AS wc LEFT JOIN links as l ON wc.id = l.module_id AND l.is_active = 1 LEFT JOIN images as i ON wc.id = i.module_id AND i.is_active = 1 WHERE wc.type = 'AboutWelcomeMessage' AND wc.is_active = 1;`, function (error, about, fields) {
             if (error) {  console.log("Error...", error); reject(error);  } 
@@ -77,12 +80,16 @@ AppModel.prototype.fetchPageData = function () {
               });
             });
           });
-        }else if(that.page === 'About'){
+        }
+        
+        else if(that.page === 'About'){
           connection.query(`SELECT wc.id, wc.content, i.image_name, l.website_link as link FROM website_content AS wc LEFT JOIN links as l ON wc.id = l.module_id AND l.is_active = 1 LEFT JOIN images as i ON wc.id = i.module_id AND i.is_active = 1 WHERE wc.type = 'AboutWelcomeMessage' AND wc.is_active = 1;`, function (error, about, fields) {
             if (error) {  console.log("Error...", error); reject(error);  } 
                   resolve({about: about });
           });
-        }else if (that.page === 'Contact'){
+        }
+        
+        else if (that.page === 'Contact'){
           connection.query(`SELECT c.id, c.email, c.address, c.mobile FROM contact AS c WHERE c.is_active = 1;`, function (error, contact, fields) {
             if (error) {  console.log("Error...", error); reject(error);  } 
             
@@ -92,6 +99,31 @@ AppModel.prototype.fetchPageData = function () {
             });
           });
         }
+        
+        else if(that.page === 'Miracle' || that.page === 'Direction'){
+          
+          Query = `SELECT wc.id, wc.title, wc.content, i.image_name FROM website_content AS wc LEFT JOIN images as i ON wc.id = i.module_id AND i.is_active = 1 WHERE wc.type = '${that.page}' AND wc.is_active = 1 ORDER BY wc.id DESC `;
+          if(that.pageNo > 0 ){
+            Query = Query + ` LIMIT ${((that.pageNo * 9) - 9)},9 ;`;
+          }
+          
+          connection.query(Query, function (error, rows, fields) {
+            if (error) {  console.log("Error...", error); reject(error);  } 
+            
+            connection.query(`SELECT wc.id, wc.title, wc.content, i.image_name FROM website_content AS wc LEFT JOIN images as i ON wc.id = i.module_id AND i.is_active = 1 WHERE wc.type = '${that.page}' AND wc.is_active = 1 ORDER BY wc.id DESC;`, function (error, totalRows, fields) {
+              if (error) {  console.log("Error...", error); reject(error);  } 
+              resolve({data: rows, counts: totalRows.length});
+            });            
+          });
+        }
+
+        else if(that.page === 'OBE'){
+          connection.query(`SELECT wc.id, wc.content, i.image_name, l.website_link as link FROM website_content AS wc LEFT JOIN links as l ON wc.id = l.module_id AND l.is_active = 1 LEFT JOIN images as i ON wc.id = i.module_id AND i.is_active = 1 WHERE wc.type = 'OBE' AND wc.is_active = 1;`, function (error, rows, fields) {
+            if (error) {  console.log("Error...", error); reject(error);  }
+              resolve({data: rows });
+          });
+        }
+
           connection.release();
           console.log('Process Complete %d', connection.threadId);
       });

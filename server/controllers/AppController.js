@@ -27,8 +27,12 @@ const fetchHeaderFooterContent = async function (req, res, next) {
 
 
 const fetchPageData = async function (req, res, next) {
+    const params = {
+        page: req.body.page,
+        pageNo : Number(req.body.pageNo),
+    }
     try {
-        const result = await new AppModel({page: req.body.page}).fetchPageData();
+        const result = await new AppModel(params).fetchPageData();
         res.send(result);
     } catch (err) {
         next(err);

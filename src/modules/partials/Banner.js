@@ -10,16 +10,21 @@ import {FTP_URL} from '../../api/config/Constants.js';
 export default function Banner() {
     
     const [imageURL, setImageURL] = useState(FTP_URL);
+    const [page, setPage] = useState('');
+
     let type = ''; 
+    
     
     useEffect(() => {
         switch((window.location.pathname).toString().toLowerCase()){
-            case '/' : type = 'bannerHome'; break;
-            case '/about' : type = 'bannerAbout'; break;
-            case '/contact' : type = 'bannerContact'; break;
-            // case 'Miracle'       :   type: ; break;
-            // case 'Direction'     :   type: ; break;
-            // case 'OBE'           :   type: ; break;
+            case '/' : type = 'bannerHome'; setPage('Home'); break;
+            case '/about' : type = 'bannerAbout'; setPage('About Us'); break;
+            case '/contact' : type = 'bannerContact'; setPage('Contact'); break;
+            case '/miracle' : type = 'bannerMiracle'; setPage('Miracles'); break;
+            case '/direction' : type = 'bannerDirection'; setPage('Directions'); break;
+            case '/obe' : type = 'bannerOBE'; setPage(`OBE's`); break;
+            case '/blog' : type = 'bannerBlog'; setPage(`Blogs`); break;
+            
             // case 'Prayer'        :   type: ; break;
             // case 'Contact'       :   type: ; break;        
     
@@ -43,22 +48,16 @@ export default function Banner() {
 
     return(
         <Fragment>
-            <section className="site-hero overlay min-max-height" data-stellar-background-ratio='1'  style={{backgroundImage: `url(${imageURL})`}}>
+            <section className="site-hero overlay" data-stellar-background-ratio='0.5'  style={{backgroundImage: `url(${imageURL})`}}>
                 <div class="container">
                     <div class="row align-items-center justify-content-center site-hero-inner">
                         <div class="col-md-8 text-center">
-                            {/* <div class="mb-5 element-animate">
+                            <div class="mb-5 element-animate fadeInUp element-animated">
                                 <div class="block-17">
-                                    <h1 class="heading mb-4">Let your light so shine before men.</h1>
-                                    <p><a href="#" class="btn btn-primary-white py-3 px-5">About Us</a> <a href="#" class="text-white ml-4"> <span class="ion-ios-location mr-2"></span> Visit Our Church</a></p>
+                                    <h1 class="heading mb-4">{page}</h1>
+                                    {/* <p><a href="#" class="btn btn-primary-white py-3 px-5">About Us</a> <a href="#" class="text-white ml-4"> <span class="ion-ios-location mr-2"></span> Visit Our Church</a></p> */}
                                 </div>
-                            </div> */}
-                            {/* <div class="mb-5 element-animate fadeInUp element-animated">
-                                <div class="block-17">
-                                    <h1 class="heading mb-4" style={{marginTop:'80px', color:'white', fontSize:'70px'}}>God Consciousness</h1>
-                                    <div class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde doloremque necessitatibus quidem itaque illum nulla dolores, tempora corporis eius, fuga natus esse rem animi. Doloribus animi, reiciendis voluptatum eum ullam.</div>
-                                </div>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
