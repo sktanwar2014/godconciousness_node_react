@@ -1,26 +1,27 @@
 import React, {Fragment, useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
 
 // Components
 // import FullContentViewDialog from './Components/FullContentViewDialog.js';
- 
+import Loader from '../common/FallbackLoader.js';
+
 //API
 import FetchAPI from '../api/APIs.js';
 import { FTP_URL } from '../api/config/Constants.js';
-import Loader from '../common/FallbackLoader.js';
 
-export default function Direction(props) {
+export default function Prayer(props) {
 
   
   // const [showContentDialog, setShowContentDialog] = useState(false);
   // const [dialogContent, setDialogContent]  = useState('');
 
-  const [direction, setDirection] = useState([]);
-  
-  const [pageCount, setPageCount] = useState(0);
-  const [pageNo, setPageNo] = useState(1);
+  const [prayers, setPrayers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [pageCount, setPageCount] = useState(0);
+  const [pageNo, setPageNo] = useState(1);
+  
   useEffect(() => {
     fetchPageData();
   },[]);
@@ -29,12 +30,12 @@ export default function Direction(props) {
     setIsLoading(true);
     try{
       const result = await FetchAPI.fetchPageData({
-        page: 'Direction',
+        page: 'Prayer',
         pageNo: pageNo,
       });
       setIsLoading(false);
       setPageCount(result.counts);
-      setDirection(result.data);
+      setPrayers(result.data);
     }catch(e){
       console.log('Error...', e);
     }
@@ -46,7 +47,7 @@ export default function Direction(props) {
 	}
   
   // const handleDialogeOpen = (objectIndex) => {
-  //   setDialogContent({content: miracles[objectIndex], title: 'Direction'});
+  //   setDialogContent({content: prayers[objectIndex].content, title: 'Prayer'});
   //   setShowContentDialog(true);
   // }
 
@@ -59,18 +60,18 @@ export default function Direction(props) {
       <section class="site-section bg-light">
         <div class="container">       
          <div class="row" id="top">
-           {(direction.length > 0 ? direction: []).map((data, index) => {
+           {(prayers.length > 0 ? prayers: []).map((data, index) => {
              return(
               <div class="col-md-6 col-lg-4 mb-5">
                 <div class="block-20">
                   <figure>
-                    <img src={FTP_URL + '/api/images?path=Direction/' + data.image_name}  class="img-fluid" />
+                    <img src={FTP_URL + '/api/images?path=Prayer/' + data.image_name}  class="img-fluid" />
                   </figure>
                   <div class="text text-center">
                     <h3 class="heading">{data.title}</h3>
-                    <p>{`"` +data.content + `"`}</p>
-                    {/* <p>{(data.content).substring(0,110) + '...'}</p> */}
-                    {/* <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index)}}>Read More</a></p> */}
+                    <p>{(data.content).substring(0,90) + '...'}</p>
+                    <p> <Link to= {{pathname:"/DailyPrayer", state : data.id }}> Read Full </Link> </p>
+                    {/* <p> <a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index)}}>Read Full</a></p> */}
                   </div>
                 </div>
               </div>  

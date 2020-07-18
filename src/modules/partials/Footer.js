@@ -25,13 +25,13 @@ export default function Footer({contact, footerData, socialLinks }){
                 <ul class="list-unstyled">
                   <li><a href="/About">Introduction</a></li>
                   <li><a href="/Miracle">Miracles</a></li>
-                  <li><a href="/Obes">OBE's Ministry</a></li>
+                  <li><a href="/Obe">OBE's Ministry</a></li>
                 </ul>
               </div>
               <div class="col-md-6">
                 <ul class="list-unstyled">
                   <li><a href="/DailyPrayer">Prayers</a></li>
-                  <li><a href="/Blogs">Blogs</a></li>
+                  <li><a href="/Event">Events</a></li>
                   <li><a href="/Contact">Contact</a></li>
                 </ul>
               </div>              

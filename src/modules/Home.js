@@ -1,6 +1,5 @@
 import React, {Fragment, useEffect, useState} from 'react';
 
-
 // Components
 import FullContentViewDialog from './Components/FullContentViewDialog.js';
 import {getDateInDDMMYYYY} from '../lib/datetime.js';
@@ -41,9 +40,9 @@ export default function Home(props) {
   
   const handleDialogeOpen = (objectIndex, type) => {
     if(type === 'Miracle'){
-      setDialogContent({content: miracles[objectIndex].content, title: type});
+      setDialogContent({content: miracles[objectIndex], title: type});
     }else if(type === 'Event'){
-      setDialogContent({content: events[objectIndex].content, title: type});
+      setDialogContent({content: events[objectIndex], title: type});
     }
     setShowContentDialog(true);
   }
@@ -51,6 +50,12 @@ export default function Home(props) {
   const handleDialogClose = () => {
     setShowContentDialog(false);
   }
+
+  
+  const handleSlide = (name) => {
+     console.log( name)
+  }
+  
 
   return(
     <Fragment>
@@ -113,7 +118,7 @@ export default function Home(props) {
               </div>
             </div>
           </div>
-         {/* <div class="row">
+         <div class="row">
            {(miracles.length > 0 ? miracles: []).map((data, index) => {
              return(
               <div class="col-md-6 col-lg-4 mb-5">
@@ -130,15 +135,15 @@ export default function Home(props) {
               </div>  
              )
            })}                
-        </div>  */}
+        </div> 
       </div>
-      <div class="block-13">
+      {/* <div class="block-13">
         <div class="nonloop-block-13 owl-carousel owl-loaded owl-drag">
           <div class="owl-stage-outer">
-            <div class="owl-stage" style={{transform: 'translate3d(-363px, 0px, 0px)', transition: 'all 0.25s ease 0s', width: '2481px', paddingLeft: '150px', paddingRight: '150px'}}>
+            <div class="owl-stage" style={{transform: 'translate3d(0px, 0px, 0px)', transition: 'all 0.25s ease 0s', width: '3200px', paddingLeft: '150px', paddingRight: '150px'}}>
               {(miracles.length > 0 ? miracles: []).map((data, index) => {
                 return(
-                  <div class={index === 0 ? "owl-item" : "owl-item" } style={{width: '343.5px', marginRight: '20px'}}>
+                  <div class={index === 0 || index === 1 ? "owl-item active" : "owl-item" } style={{width: '343.5px', marginRight: '20px'}}>
                     <div class="item">
                       <div class="block-20">
                         <figure>
@@ -158,10 +163,10 @@ export default function Home(props) {
             </div>
           </div>
           <div class="owl-nav">
-            <button role="presentation" class="owl-prev">
-              <span class="ion-chevron-left"></span>
+            <button role="presentation" class="owl-prev" onClick={() => {handleSlide('prev')}}>
+              <span class="ion-chevron-left"  ></span>
             </button>
-            <button role="presentation" class="owl-next">
+            <button role="presentation" class="owl-next" onClick={() => {handleSlide('next')}}>
               <span class="ion-chevron-right"></span>
             </button>
           </div>
@@ -170,8 +175,8 @@ export default function Home(props) {
             <button class="owl-dot"><span></span></button>
             <button class="owl-dot"><span></span></button>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div> */}
     </section>
     <section class="site-section">
       <div class="container">
@@ -185,17 +190,18 @@ export default function Home(props) {
         <div class="row">
           {(events.length > 0 ? events: []).map((data, index) => {
               return(
-                <div class="col-md-6 col-lg-6 mb-5">
-                  <div class="block-44 d-flex mb-3">
-                    <div class="block-44-image">
-                      <img src={FTP_URL + '/api/images?path=Event/' + data.image_name}  alt="Image placeholder" />
-                    </div>
-                    <div class="block-44-text">
-                      <h3 class="block-44-heading">
-                        <a > {data.title} </a>
-                      </h3>
-                      <div class="block-44-meta">{ `Event on ` + getDateInDDMMYYYY(data.date) }</div>
-                      <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index, 'Event')}}>Read More</a></p>
+                <div class="col-md-6 col-lg-4 mb-5">
+                  <div class="block-20">
+                    <figure>
+                      <img src={FTP_URL + '/api/images?path=Event/' + data.image_name}  class="img-fluid" />
+                    </figure>
+                    <div class="text text-center">
+                      <h3 class="heading">{data.title}</h3>
+                      <div class="meta mb-3">
+                        <div><span class="fa fa-calendar"></span>{'  ' + getDateInDDMMYYYY(data.date)}</div>
+                        <div><span class="fa fa-clock-o"></span> {'  ' +  data.time} </div>
+                      </div>
+                      <p><a style={{cursor: 'pointer'}} onClick =  {(e)=>{ handleDialogeOpen(index, 'Event')}}><strong>Read More</strong></a></p>
                     </div>
                   </div>
                 </div>

@@ -3,20 +3,20 @@ import Pagination from '@material-ui/lab/Pagination';
 
 // Components
 import FullContentViewDialog from './Components/FullContentViewDialog.js';
-import Loader from '../common/FallbackLoader.js';
-
+import {getDateInDDMMYYYY} from '../lib/datetime.js';
 //API
 import FetchAPI from '../api/APIs.js';
 import { FTP_URL } from '../api/config/Constants.js';
+import Loader from '../common/FallbackLoader.js';
 
-export default function Miracle(props) {
+export default function Event(props) {
 
   
   const [showContentDialog, setShowContentDialog] = useState(false);
   const [dialogContent, setDialogContent]  = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const [miracles, setMiracles] = useState([]);
+  const [event, setEvent] = useState([]);
   
   const [pageCount, setPageCount] = useState(0);
   const [pageNo, setPageNo] = useState(1);
@@ -29,12 +29,12 @@ export default function Miracle(props) {
     setIsLoading(true);
     try{
       const result = await FetchAPI.fetchPageData({
-        page: 'Miracle',
+        page: 'Event',
         pageNo: pageNo,
       });
       setIsLoading(false);
       setPageCount(result.counts);
-      setMiracles(result.data);
+      setEvent(result.data);
     }catch(e){
       console.log('Error...', e);
     }
@@ -42,11 +42,11 @@ export default function Miracle(props) {
   
   const handlePagination = (event, page) => {
 		setPageNo(page);
-    fetchPageData(page);  
+    fetchPageData(page); 
 	}
   
   const handleDialogeOpen = (objectIndex) => {
-    setDialogContent({content: miracles[objectIndex], title: 'Miracle'});
+    setDialogContent({content: event[objectIndex], title: 'Event'});
     setShowContentDialog(true);
   }
 
@@ -59,25 +59,31 @@ export default function Miracle(props) {
       <section class="site-section bg-light">
         <div class="container">       
          <div class="row" id="top">
-           {(miracles.length > 0 ? miracles: []).map((data, index) => {
+           {(event.length > 0 ? event: []).map((data, index) => {
              return(
               <div class="col-md-6 col-lg-4 mb-5">
                 <div class="block-20">
                   <figure>
-                    <img src={FTP_URL + '/api/images?path=Miracle/' + data.image_name}  class="img-fluid" />
+                    <img src={FTP_URL + '/api/images?path=Event/' + data.image_name}  class="img-fluid" />
                   </figure>
                   <div class="text text-center">
                     <h3 class="heading">{data.title}</h3>
-                    <p>{(data.content).substring(0,90) + '...'}</p>
-                    <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index)}}>Read More</a></p>
+                    <div class="meta mb-3">
+                      <div><span class="fa fa-calendar"></span>{'  ' + getDateInDDMMYYYY(data.date)}</div>
+                      <div><span class="fa fa-clock-o"></span> {'  ' +  data.time} </div>
+                      {/* <br />
+                      <div><span class="fa fa-location-arrow"></span>{' ' + data.location + 'das ljfldas fd;lsaj;fldsj fljsda ;fldjs fjds;a fjdsnfk nasvklnkldhnklsnfsdkl fbnsdlafbjas dasnl'} </div> */}
+                    </div>
+                    {/* <p>{(data.content).substring(0,110) + '...'}</p> */}
+                    <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index)}}><strong>Read More</strong></a></p>
                   </div>
                 </div>
-              </div>  
+              </div>
              )
            })}                
         </div> 
         <div class="row"  style={{ justifyContent: 'center'}}>
-          <a href="#top"><Pagination count={Math.ceil(pageCount/9)} page={pageNo} showFirstButton showLastButton onChange={handlePagination} /> </a>
+          <a href="#top"><Pagination count={Math.ceil(pageCount/9)} page={pageNo} showFirstButton showLastButton onChange={handlePagination} /></a>
         </div>
         
       </div>

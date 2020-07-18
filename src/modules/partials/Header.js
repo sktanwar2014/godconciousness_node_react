@@ -1,7 +1,26 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 
 
 export default function Header({socialLinks}) {
+    
+    const [page, setPage] = useState('Home');
+    
+    useEffect(() => {
+        switch((window.location.pathname).toString().toLowerCase()){
+            case '/' : setPage('Home'); break;
+            case '/about' : setPage('About'); break;
+            case '/contact' : setPage('Contact'); break;
+            case '/miracle' : setPage('Miracles'); break;        
+            case '/blog' : setPage(`Blogs`); break;
+            case '/event' : setPage(`Events`); break;
+            
+            case '/direction' : setPage('Prayers'); break;
+            case '/obe' : setPage(`Prayers`); break;
+            case '/prayer' : setPage(`Prayers`); break;
+            case '/dailyprayer' : setPage(`Prayers`); break;
+       }
+    },[]);
+    
     return(
         <Fragment>
             <div class="block-45">
@@ -39,30 +58,31 @@ export default function Header({socialLinks}) {
 
                         <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
                             <ul className="navbar-nav ml-auto">
-                                <li className = "nav-item pl-10 active" >
+                                <li className = {page === 'Home' ? "nav-item pl-10 active" : "nav-item pl-10" }  >
                                     <a className="nav-link" href="/">Home</a>
                                 </li>
-                                <li className='nav-item pl-10'>
+                                <li className= {page === 'About' ? "nav-item pl-10 active" : "nav-item pl-10" }>
                                     <a className="nav-link" href="/About">About  </a>
                                 </li>
-                                <li className= 'nav-item pl-10 dropdown'>
+                                <li className=  {page === 'Prayers' ? "nav-item pl-10 dropdown active" : "nav-item pl-10 dropdown" }>
                                     <a className="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prayers</a>
                                     <div className="dropdown-menu" aria-labelledby="dropdown04">
                                         <a className="dropdown-item" href="/DailyPrayer">Daily Prayer</a>
+                                        <a className="dropdown-item" href="/Prayer">All Prayers</a>
                                         <a className="dropdown-item" href="/Direction">Direction</a>
                                         <a className="dropdown-item" href="/Obe">OBE</a>
                                     </div>
                                 </li>
-                                <li className='nav-item pl-10'>
+                                <li className= {page === 'Events' ? "nav-item pl-10 active" : "nav-item pl-10" }>
                                     <a className="nav-link" href="/Event">Events</a>
                                 </li>
-                                <li className='nav-item pl-10'>
+                                <li className= {page === 'Miracles' ? "nav-item pl-10 active" : "nav-item pl-10" }>
                                     <a className="nav-link" href="/Miracle">Miracles</a>
                                 </li>
-                                <li className='nav-item pl-10'>
+                                <li className= {page === 'Blogs' ? "nav-item pl-10 active" : "nav-item pl-10" }>
                                     <a className="nav-link" href="/Blog">Blog</a>
                                 </li>
-                                <li className='nav-item pl-10'>
+                                <li className= {page === 'Contact' ? "nav-item pl-10 active" : "nav-item pl-10" }>
                                     <a className="nav-link" href="/Contact">Contact</a>
                                 </li>
                             </ul>

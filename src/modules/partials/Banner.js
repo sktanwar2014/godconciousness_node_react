@@ -24,14 +24,9 @@ export default function Banner() {
             case '/direction' : type = 'bannerDirection'; setPage('Directions'); break;
             case '/obe' : type = 'bannerOBE'; setPage(`OBE's`); break;
             case '/blog' : type = 'bannerBlog'; setPage(`Blogs`); break;
-            
-            // case 'Prayer'        :   type: ; break;
-            // case 'Contact'       :   type: ; break;        
-    
-            // case 'DimpleAnil'    :   type: ; break;
-            // case 'AboutGC'       :   type: ; break;
-            // case 'Introduction'  :   type: ; break;
-            // case 'about'         :   type: ; break;
+            case '/event' : type = 'bannerEvent'; setPage(`Events`); break;
+            case '/prayer' : type = 'bannerPrayer'; setPage(`Prayers`); break;
+            case '/dailyprayer' : type = 'bannerPrayer'; setPage(`Daily Prayer`); break;
        }
         fetchBannerImage();
     },[]);

@@ -32,6 +32,7 @@
     "nodemailer": "^6.4.10",
     "nodemailer-smtp-transport": "^2.7.4",
     "npm": "^6.14.6",
+    "owl.carousel": "^2.3.4",
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
     "react-calendar": "^2.19.2",

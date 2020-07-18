@@ -30,6 +30,9 @@ const fetchPageData = async function (req, res, next) {
     const params = {
         page: req.body.page,
         pageNo : Number(req.body.pageNo),
+        id : Number(req.body.id),
+        fetchBy : req.body.fetchBy,
+        date: req.body.date,
     }
     try {
         const result = await new AppModel(params).fetchPageData();

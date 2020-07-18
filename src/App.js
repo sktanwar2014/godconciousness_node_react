@@ -18,11 +18,9 @@ const Miracle = lazy(()=> import('./modules/Miracle.js'));
 const Direction = lazy(()=> import('./modules/Direction.js'));
 const OBE = lazy(()=> import('./modules/OBE.js'));
 const Blog = lazy(()=> import('./modules/Blog.js'));
-
-const Introduction = lazy(()=> import('./Component/SubComponent/Introduction'));
-const AboutDimpleAnil = lazy(()=> import('./Component/SubComponent/AboutDimpleAnil'));
-const Dailyprayer = lazy(()=> import('./Component/DailyPrayer'));
-
+const Event = lazy(()=> import('./modules/Event.js'));
+const Prayer = lazy(()=> import('./modules/Prayer.js'));
+const DailyPrayer = lazy(()=> import('./modules/DailyPrayer.js'));
 
 
 function App() {
@@ -31,6 +29,7 @@ function App() {
   const [socialLinks, setSocialLinks] = useState([{link: ''}, {link: ''}, {link: ''}]);
 
   useEffect(() => {
+    
     fetchHeaderFooterContent();
   },[]);
 
@@ -59,10 +58,9 @@ function App() {
                   <Route path="/Direction" render = { props => { return <Direction {...props} /> }} />
                   <Route path="/Obe" render = { props => { return <OBE {...props} /> }} />
                   <Route path='/Blog' render = { props => { return <Blog {...props} /> }} />
-                  
-                  <Route path="/Introduction" render = { props => { return <Introduction {...props} /> }} />
-                  <Route path="/AboutDimpleAnil" render = { props => { return <AboutDimpleAnil {...props} /> }} />          
-                  <Route path="/DailyPrayer" render = { props => { return <Dailyprayer {...props} /> }} />
+                  <Route path='/Event' render = { props => { return <Event {...props} /> }} />
+                  <Route path='/Prayer' render = { props => { return <Prayer {...props} /> }} />
+                  <Route path="/DailyPrayer" render = { props => { return <DailyPrayer {...props} /> }} />
                   
                   
                 </Switch>
