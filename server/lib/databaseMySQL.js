@@ -1,6 +1,6 @@
 const env = 'local';
 
-let DbName = 'godconsciousness';
+let DbName = 'a1abiliti_newgc';
 let domainName = 'http://newgc.a1abilities.co.nz/';
 
 const mailUser = 'sktanwar.2020@gmail.com';
@@ -11,7 +11,7 @@ const mailService = 'GMAIL';
 console.log('env...', env);
 
 if (env === 'prod') {
-  DbName = 'godconsciousness';
+  DbName = 'a1abiliti_newgc';
   domainName = 'http://newgc.a1abilities.co.nz/';
 } else {  
   DbName = 'godconsciousness'
