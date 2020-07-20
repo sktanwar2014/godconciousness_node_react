@@ -27,19 +27,20 @@ export default function Contact() {
   const handleSendMail = async (e) => {
     e.preventDefault();
     try{
-      const result = await FetchAPI.sendMail({
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value,
-      });
-      if(result.sent === true){
+      // const result = await FetchAPI.sendMail({
+      //   name: document.getElementById('name').value,
+      //   phone: document.getElementById('phone').value,
+      //   email: document.getElementById('email').value,
+      //   message: document.getElementById('message').value,
+      // });
+      // if(result.sent === true){
         document.getElementById('name').value = '';
         document.getElementById('phone').value = '';
         document.getElementById('email').value = '';
         document.getElementById('message').value = '';
-        alert('Mail sent successfully.');
-      }
+      //   alert('Mail sent successfully.');
+      // }
+      
     }catch(e){
       console.log(e);
     }
