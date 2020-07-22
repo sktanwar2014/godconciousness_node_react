@@ -76,7 +76,7 @@ AppModel.prototype.fetchPageData = function () {
               connection.query(`SELECT wc.id, wc.title, wc.content, i.image_name, l.website_link as link FROM website_content AS wc LEFT JOIN links as l ON wc.id = l.module_id AND l.is_active = 1 LEFT JOIN images as i ON wc.id = i.module_id AND i.is_active = 1 WHERE wc.type = 'Prayer' AND wc.is_active = 1 ORDER BY id DESC LIMIT 1;`, function (error, prayer, fields) {
                 if (error) {  console.log("Error...", error); reject(error);  } 
 
-                connection.query(`SELECT wc.id, wc.title, wc.date, wc.content, i.image_name, l.website_link as link FROM website_content AS wc LEFT JOIN links as l ON wc.id = l.module_id AND l.is_active = 1 LEFT JOIN images as i ON wc.id = i.module_id AND i.is_active = 1 WHERE wc.type = 'Event' AND wc.is_active = 1 AND wc.date >= now() ORDER BY id DESC LIMIT 3;`, function (error, events, fields) {
+                connection.query(`SELECT wc.id, wc.title, wc.date, wc.content, i.image_name, l.website_link as link, wc.time, wc.location, wc.contact FROM website_content AS wc LEFT JOIN links as l ON wc.id = l.module_id AND l.is_active = 1 LEFT JOIN images as i ON wc.id = i.module_id AND i.is_active = 1 WHERE wc.type = 'Event' AND wc.is_active = 1 AND wc.date >= now() ORDER BY id DESC LIMIT 3;`, function (error, events, fields) {
                   if (error) {  console.log("Error...", error); reject(error);  } 
                   resolve({about: about, miracles: miracles, prayer: prayer, events: events });
                 });

@@ -1,6 +1,6 @@
 const MySQL = require("mysql");
 let dbOptions = '';
-const { env, dbName } = require("./database");
+const { env, dbName } = require("./databaseMySQL");
 
 if (env === 'prod') {
    dbOptions = {

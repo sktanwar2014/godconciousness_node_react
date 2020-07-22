@@ -5,7 +5,7 @@ export default function Footer({contact, footerData, socialLinks }){
   return(
     <footer class="site-footer">
       <div class="container">
-        <div class="row mb-5">          
+        <div class="row">
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
             <h3 class="heading">About</h3>
             <div class="row">

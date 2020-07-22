@@ -127,8 +127,8 @@ export default function Home(props) {
                     <a href="#"><img src={FTP_URL + '/api/images?path=Miracle/' + data.image_name}  class="img-fluid"  /></a>
                   </figure>
                   <div class="text text-center">
-                    <h3 class="heading"><a href="#">{data.title}</a></h3>
-                    <p>{(data.content).substring(0,110) + '...'}</p>
+                    <h3 class="heading">{ data.title.length > 22 ? ((data.title).substring(0,18) + `...`) : data.title}</h3>
+                    <p>{ data.content.length > 90 ? ((data.content).substring(0,90) + '...') : data.content}</p>
                     <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index, 'Miracle')}}>Read More</a></p>
                   </div>
                 </div>
@@ -207,6 +207,7 @@ export default function Home(props) {
                 </div>
               )
           })}
+          {events.length === 0 && <p className="p-center">Coming soon</p>}
         </div>
       </div>
     </section>

@@ -43,13 +43,13 @@ export default function Banner() {
 
     return(
         <Fragment>
-            <section className="site-hero overlay" data-stellar-background-ratio='0.5'  style={{backgroundImage: `url(${imageURL})`}}>
+            <section className="site-hero overlay" data-stellar-background-ratio='1'  style={{backgroundImage: `url(${imageURL})`}}>
                 <div class="container">
                     <div class="row align-items-center justify-content-center site-hero-inner">
                         <div class="col-md-8 text-center">
                             <div class="mb-5 element-animate fadeInUp element-animated">
                                 <div class="block-17">
-                                    <h1 class="heading mb-4">{page}</h1>
+                                    {/* <h1 class="heading mb-4">{page}</h1> */}
                                     {/* <p><a href="#" class="btn btn-primary-white py-3 px-5">About Us</a> <a href="#" class="text-white ml-4"> <span class="ion-ios-location mr-2"></span> Visit Our Church</a></p> */}
                                 </div>
                             </div>

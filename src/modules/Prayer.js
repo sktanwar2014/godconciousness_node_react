@@ -65,11 +65,11 @@ export default function Prayer(props) {
               <div class="col-md-6 col-lg-4 mb-5">
                 <div class="block-20">
                   <figure>
-                    <img src={FTP_URL + '/api/images?path=Prayer/' + data.image_name}  class="img-fluid" />
+                    <img src={FTP_URL + '/api/images?path=Prayer/' + data.image_name}  class="img-fluid img-box" />
                   </figure>
-                  <div class="text text-center">
-                    <h3 class="heading">{data.title}</h3>
-                    <p>{(data.content).substring(0,90) + '...'}</p>
+                  <div class="text text-center">                    
+                    <h3 class="heading">{ data.title.length > 20 ? ((data.title).substring(0,18) + `...`) : data.title}</h3>
+                    <p>{ data.content.length > 75 ? ((data.content).substring(0,75) + '...') : data.content}</p>
                     <p> <Link to= {{pathname:"/DailyPrayer", state : data.id }}> Read Full </Link> </p>
                     {/* <p> <a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index)}}>Read Full</a></p> */}
                   </div>

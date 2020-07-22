@@ -2,7 +2,7 @@ import React, {Fragment, useEffect, useState} from 'react';
 import Pagination from '@material-ui/lab/Pagination';
 
 // Components
-// import FullContentViewDialog from './Components/FullContentViewDialog.js';
+import FullContentViewDialog from './Components/FullContentViewDialog.js';
  
 //API
 import FetchAPI from '../api/APIs.js';
@@ -12,8 +12,8 @@ import Loader from '../common/FallbackLoader.js';
 export default function Direction(props) {
 
   
-  // const [showContentDialog, setShowContentDialog] = useState(false);
-  // const [dialogContent, setDialogContent]  = useState('');
+  const [showContentDialog, setShowContentDialog] = useState(false);
+  const [dialogContent, setDialogContent]  = useState('');
 
   const [direction, setDirection] = useState([]);
   
@@ -45,14 +45,14 @@ export default function Direction(props) {
     fetchPageData(page);  
 	}
   
-  // const handleDialogeOpen = (objectIndex) => {
-  //   setDialogContent({content: miracles[objectIndex], title: 'Direction'});
-  //   setShowContentDialog(true);
-  // }
+  const handleDialogeOpen = (objectIndex) => {
+    setDialogContent({content: direction[objectIndex], title: 'Direction'});
+    setShowContentDialog(true);
+  }
 
-  // const handleDialogClose = () => {
-  //   setShowContentDialog(false);
-  // }
+  const handleDialogClose = () => {
+    setShowContentDialog(false);
+  }
 
   return(
     <Fragment>
@@ -64,13 +64,14 @@ export default function Direction(props) {
               <div class="col-md-6 col-lg-4 mb-5">
                 <div class="block-20">
                   <figure>
-                    <img src={FTP_URL + '/api/images?path=Direction/' + data.image_name}  class="img-fluid" />
+                    <img src={FTP_URL + '/api/images?path=Direction/' + data.image_name}  class="img-fluid img-box" />
                   </figure>
                   <div class="text text-center">
-                    <h3 class="heading">{data.title}</h3>
-                    <p>{`"` +data.content + `"`}</p>
-                    {/* <p>{(data.content).substring(0,110) + '...'}</p> */}
-                    {/* <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index)}}>Read More</a></p> */}
+                    {/* <h3 class="heading">{data.title}</h3>
+                    <p>{`"` +data.content + `"`}</p> */}
+                    <h3 class="heading">{ data.title.length > 20 ? ((data.title).substring(0,18) + `...`) : data.title}</h3>
+                    <p>{ data.content.length > 75 ? ((data.content).substring(0,75) + '...') : data.content}</p>
+                    <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index)}}>Read More</a></p>
                   </div>
                 </div>
               </div>  
@@ -84,7 +85,7 @@ export default function Direction(props) {
       </div>
     </section>
     {isLoading === true ? <Loader /> : null}
-    {/* {showContentDialog ? <FullContentViewDialog show={showContentDialog} handleClose = {handleDialogClose}  data={dialogContent} /> : null } */}
+    {showContentDialog ? <FullContentViewDialog show={showContentDialog} handleClose = {handleDialogClose}  data={dialogContent} /> : null }
     </Fragment>
   )
 }

@@ -3,30 +3,30 @@ import React, {Fragment, useEffect, useState} from 'react';
 
 
 //API
-import FetchAPI from '../api/APIs.js';
-import { FTP_URL } from '../api/config/Constants.js';
+// import FetchAPI from '../api/APIs.js';
+// import { FTP_URL } from '../api/config/Constants.js';
 
 export default function About(props) {
 
-  const [about, setAbout] = useState({id:'', content: '', image_name: '', link: ''});
+  // const [about, setAbout] = useState({id:'', content: '', image_name: '', link: ''});
 
   useEffect(() => {
-    fetchPageData();
+    // fetchPageData();
   },[]);
 
-  const fetchPageData = async () => {
-    try{
-      const result = await FetchAPI.fetchPageData({page: 'About'});
-      setAbout(result.about[0]);
-    }catch(e){
-      console.log('Error...', e);
-    }
-  }
+  // const fetchPageData = async () => {
+  //   try{
+  //     const result = await FetchAPI.fetchPageData({page: 'About'});
+  //     setAbout(result.about[0]);
+  //   }catch(e){
+  //     console.log('Error...', e);
+  //   }
+  // }
 
 
   return(
     <Fragment>
-      <section class="site-section">
+      {/* <section class="site-section">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6 order-md-2">
@@ -44,13 +44,13 @@ export default function About(props) {
                 </div>
                 <div class="text mb-6">
                   <p class="mb-4 text-justify"> { about.content} </p> 
-                  {/* <p class="text-black">By:  <strong>Gregg Smith</strong></p> */}
+                  <p class="text-black">By:  <strong>Gregg Smith</strong></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section class="site-section bg-light">
         <div class="container">
           <div class="row">

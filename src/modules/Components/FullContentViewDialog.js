@@ -18,9 +18,12 @@ export default function FullContentViewDialog({show, handleClose, data}){
       </Modal.Header>
       <Modal.Body> {
         data.title !== 'Event' ?
-        <blockquote className="blockqoute-lay">
-          {page.content}
-        </blockquote>
+        <div>
+          <p className="event-line">{ `${page.title}`}</p>
+            <blockquote className="blockqoute-lay">
+              {page.content}
+            </blockquote>
+          </div>
         : 
         <div>
           <p className="event-line">{ `${page.title} organized on ${getDateInDDMMYYYY(page.date)} at ${page.time} in ${page.location}.`}</p>

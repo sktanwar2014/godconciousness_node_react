@@ -75,12 +75,14 @@ export default function Event(props) {
                       <div><span class="fa fa-location-arrow"></span>{' ' + data.location + 'das ljfldas fd;lsaj;fldsj fljsda ;fldjs fjds;a fjdsnfk nasvklnkldhnklsnfsdkl fbnsdlafbjas dasnl'} </div> */}
                     </div>
                     {/* <p>{(data.content).substring(0,110) + '...'}</p> */}
+                    {/* <p>Coming soon</p> */}
                     <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index)}}><strong>Read More</strong></a></p>
                   </div>
                 </div>
               </div>
              )
-           })}                
+           })}
+           {event.length === 0 && <p className="p-center">Coming soon</p>}
         </div> 
         <div class="row"  style={{ justifyContent: 'center'}}>
           <a href="#top"><Pagination count={Math.ceil(pageCount/9)} page={pageNo} showFirstButton showLastButton onChange={handlePagination} /></a>

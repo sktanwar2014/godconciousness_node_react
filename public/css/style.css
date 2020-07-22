@@ -168,10 +168,11 @@ header .navbar.navbar-light .nav-link.active {
 
 .site-hero {
   background-size: cover;
-  background-position: center center;
+  /* background-position: center center; */
   background-repeat: no-repeat;
-  min-height: 750px;
-  height: 100vh;
+  min-height: 500px;
+  height: 60vh;
+  border-bottom: 5px solid #6c5b7b;
 }
 
 .site-hero .lead {
@@ -214,7 +215,7 @@ header .navbar.navbar-light .nav-link.active {
 }
 
 .site-hero .container {
-  position: relative;
+  position: relative; 
   z-index: 2;
 }
 
@@ -248,11 +249,11 @@ header .navbar.navbar-light .nav-link.active {
   left: 0;
   right: 0;
   bottom: 0;
-}
+} 
 
 .site-hero .site-hero-inner {
-  min-height: 750px;
-  height: 100vh;
+  min-height: 500px;
+  height: 60vh;
 }
 
 .site-hero.site-sm-hero {
@@ -1094,7 +1095,7 @@ blockquote p {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  padding: 5em 0;
+  padding: 5em 2em 0 0;
   line-height: 1.7;
   background: #6c5b7b;
 }
@@ -2676,9 +2677,9 @@ blockquote p {
 }
 
 .event-line {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-transform: uppercase;
 }
 
@@ -2706,4 +2707,14 @@ blockquote p {
   color: white;
   font-weight: 500;
   margin-left: 20px;
+}
+
+.img-box {
+  height: 350px;
+  object-fit: cover;
+}
+
+.p-center {
+  width: -webkit-fill-available;
+  text-align-last: center;
 }
