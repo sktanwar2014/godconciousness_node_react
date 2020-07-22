@@ -2712,6 +2712,7 @@ blockquote p {
 .img-box {
   height: 350px;
   object-fit: cover;
+  width: 100%;
 }
 
 .p-center {
