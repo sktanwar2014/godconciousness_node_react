@@ -124,11 +124,11 @@ export default function Home(props) {
               <div class="col-md-6 col-lg-4 mb-5">
                 <div class="block-20">
                   <figure>
-                    <a href="#"><img src={FTP_URL + '/api/images?path=Miracle/' + data.image_name}  class="img-fluid"  /></a>
+                    <a href="#"><img src={FTP_URL + '/api/images?path=Miracle/' + data.image_name}  class="img-fluid img-box"  /></a>
                   </figure>
                   <div class="text text-center">
-                    <h3 class="heading">{ data.title.length > 22 ? ((data.title).substring(0,18) + `...`) : data.title}</h3>
-                    <p>{ data.content.length > 90 ? ((data.content).substring(0,90) + '...') : data.content}</p>
+                    <h3 class="heading">{ data.title.length > 15 ? ((data.title).substring(0,15) + `...`) : data.title}</h3>
+                    <p>{ data.content.length > 70 ? ((data.content).substring(0,70) + '...') : data.content}</p>
                     <p><a style={{cursor: 'pointer'}} onClick = {(e)=>{ handleDialogeOpen(index, 'Miracle')}}>Read More</a></p>
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function Home(props) {
                 <div class="col-md-6 col-lg-4 mb-5">
                   <div class="block-20">
                     <figure>
-                      <img src={FTP_URL + '/api/images?path=Event/' + data.image_name}  class="img-fluid" />
+                      <img src={FTP_URL + '/api/images?path=Event/' + data.image_name}  class="img-fluid img-box" />
                     </figure>
                     <div class="text text-center">
                       <h3 class="heading">{data.title}</h3>

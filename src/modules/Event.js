@@ -64,7 +64,7 @@ export default function Event(props) {
               <div class="col-md-6 col-lg-4 mb-5">
                 <div class="block-20">
                   <figure>
-                    <img src={FTP_URL + '/api/images?path=Event/' + data.image_name}  class="img-fluid" />
+                    <img src={FTP_URL + '/api/images?path=Event/' + data.image_name}  class="img-fluid img-box" />
                   </figure>
                   <div class="text text-center">
                     <h3 class="heading">{data.title}</h3>
