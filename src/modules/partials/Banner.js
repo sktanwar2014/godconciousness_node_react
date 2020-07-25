@@ -43,7 +43,7 @@ export default function Banner() {
 
     return(
         <Fragment>
-            <section className="site-hero overlay" data-stellar-background-ratio='1'  style={{backgroundImage: `url(${imageURL})`}}>
+            <section className="site-hero overlay"  style={{backgroundImage: `url(${imageURL})`}}>
                 <div class="container">
                     <div class="row align-items-center justify-content-center site-hero-inner">
                         <div class="col-md-8 text-center">
