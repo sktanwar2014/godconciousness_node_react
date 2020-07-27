@@ -65,10 +65,10 @@ export default function Home(props) {
             <div class="col-md-12 d-lg-flex">
                 
                 <div class="block-42-text">
-                  <div class="block-42-label" style={{fontWeight: '400'}}>Today's Prayer:</div>
+                  <div class="block-42-label daily-prayer">Today's Prayer</div>
                   <div class="block-42-title mx-2"> 
                     <blockquote className="blockqoute-home">
-                      <p>{prayer.content}</p>
+                      <p style={{margin: '0px'}}>{prayer.content}</p>
                     </blockquote>
                   </div>
                   {/* <div class="block-42-meta">Posted on June 28, 2018, <strong>Pastor John Smith</strong> </div> */}

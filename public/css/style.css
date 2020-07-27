@@ -2667,9 +2667,8 @@ blockquote p {
 
 .blockqoute-home {
   border-color: #685877;
-  padding: 20px;
-  margin: 0px 100px;
-  font-weight: 500;
+  padding: 10px;  
+  font-weight: 400;
 }
 
 .pl-10 {
@@ -2718,4 +2717,12 @@ blockquote p {
 .p-center {
   width: -webkit-fill-available;
   text-align-last: center;
+}
+
+.daily-prayer {
+  width: 100%;
+  text-align: -webkit-center;
+  text-align: center;
+  font-size: large;
+  font-weight: 500;
 }
